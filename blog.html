@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insights & Blog â€” TAVRICON | Digital Marketing, SEO & AI Strategies</title>
+  <meta name="description" content="Read practical perspectives, performance marketing frameworks, AI marketing workflows, and SEO strategies from TAVRICON strategists.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo/favicon.svg">
+  
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+  <!-- GLOBAL HEADER -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-lockup" aria-label="TAVRICON Home">
+        <svg class="brand-logo-svg" viewBox="0 0 100 100" fill="none">
+          <defs>
+            <linearGradient id="navCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FFFFFF" />
+              <stop offset="30%" stop-color="#00F2FE" />
+              <stop offset="70%" stop-color="#38BDF8" />
+              <stop offset="100%" stop-color="#2563EB" />
+            </linearGradient>
+            <linearGradient id="navRoyal" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#60A5FA" />
+              <stop offset="60%" stop-color="#2563EB" />
+              <stop offset="100%" stop-color="#1D4ED8" />
+            </linearGradient>
+            <linearGradient id="navVelvet" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#334155" />
+              <stop offset="100%" stop-color="#0F172A" />
+            </linearGradient>
+          </defs>
+          <path d="M12 36 L30 18 L76 18 L64 36 Z" fill="url(#navCyan)" />
+          <path d="M68 18 L86 6 L88 18 L72 36 Z" fill="url(#navRoyal)" />
+          <path d="M26 62 L48 44 L48 90 L34 90 L34 78 L26 84 Z" fill="url(#navVelvet)" />
+          <path d="M52 56 L64 48 L64 86 L52 92 Z" fill="url(#navRoyal)" />
+          <path d="M68 44 L80 34 L80 72 L68 80 Z" fill="url(#navCyan)" />
+        </svg>
+        <div class="brand-text-group">
+          <span class="brand-title">TAVRICON</span>
+          <span class="brand-tagline">GROWTH • PERFORMANCE</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" role="navigation" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="founder.html" class="nav-link">Founder</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="work.html" class="nav-link">Work</a></li>
+          <li><a href="blog.html" class="nav-link active">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-cta-wrap">
+        <button class="sound-toggle-btn" aria-label="Toggle Sound Effects" title="Sound Effects: ON (Click to Mute)">
+          <span class="sound-wave-bars">
+            <span class="bar bar-1"></span>
+            <span class="bar bar-2"></span>
+            <span class="bar bar-3"></span>
+          </span>
+          <span class="sound-status-text">SOUND ON</span>
+        </button>
+        <a href="contact.html" class="btn btn-primary btn-sm header-cta-desktop">Let's Talk</a>
+        <button class="mobile-toggle-btn" aria-label="Toggle Mobile Menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div class="drawer-backdrop" aria-hidden="true"></div>
+  <aside class="mobile-drawer" role="dialog" aria-label="Mobile Navigation">
+    <div class="drawer-header">
+      <div class="brand-text-group">
+        <span class="brand-title">TAVRICON</span>
+        <span class="brand-tagline">EST. 2024</span>
+      </div>
+      <button class="drawer-close-btn" aria-label="Close Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <ul class="drawer-nav-list">
+      <li><a href="index.html" class="drawer-nav-link"><span>Home</span> <span>&rarr;</span></a></li>
+      <li><a href="about.html" class="drawer-nav-link"><span>About</span> <span>&rarr;</span></a></li>
+      <li><a href="founder.html" class="drawer-nav-link"><span>Founder</span> <span>&rarr;</span></a></li>
+      <li><a href="services.html" class="drawer-nav-link"><span>Services</span> <span>&rarr;</span></a></li>
+      <li><a href="work.html" class="drawer-nav-link"><span>Work</span> <span>&rarr;</span></a></li>
+      <li><a href="blog.html" class="drawer-nav-link active"><span>Blog</span> <span>&rarr;</span></a></li>
+      <li><a href="contact.html" class="drawer-nav-link"><span>Contact</span> <span>&rarr;</span></a></li>
+    </ul>
+    <div style="margin-top:auto;">
+      <a href="contact.html" class="btn btn-primary" style="width:100%; margin-bottom:12px;">Let's Talk</a>
+      <p style="font-size:0.75rem; color:var(--text-faint); text-align:center;">+91 97991 11507 • Jaipur, India</p>
+    </div>
+  </aside>
+
+  <!-- MAIN BLOG CONTENT -->
+  <main id="main-content">
+    
+    <!-- Hero -->
+    <section class="inner-hero">
+      <div class="container hero-content">
+        <span class="badge badge-cyan fade-up">Strategic Intelligence</span>
+        <h1 class="text-display fade-up stagger-1" style="margin-top:12px; margin-bottom:16px;">
+          Ideas That Turn <span class="text-gradient-aurora">Marketing Into Growth.</span>
+        </h1>
+        <p class="hero-subtitle fade-up stagger-2">
+          Practical insights, mathematical perspectives, and operational frameworks on paid media, SEO architecture, AI automations, and building high-yield digital brands.
+        </p>
+
+        <!-- Live Search Bar -->
+        <div class="blog-search-bar fade-up stagger-3">
+          <svg class="blog-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" class="blog-search-input" placeholder="Search insights by keyword, topic or channel..." aria-label="Search blog articles">
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Pills & Articles -->
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+        
+        <div class="filter-bar blog-filter-bar fade-up">
+          <button class="filter-btn active" data-filter="all">All Perspectives</button>
+          <button class="filter-btn" data-filter="ppc">Paid Media &amp; Meta</button>
+          <button class="filter-btn" data-filter="seo">Authority SEO</button>
+          <button class="filter-btn" data-filter="ai">AI &amp; Automations</button>
+          <button class="filter-btn" data-filter="founder">Founder &amp; Strategy</button>
+        </div>
+
+        <!-- Featured Flagship Article Card -->
+        <div class="featured-article-card fade-up blog-read-trigger" role="button" tabindex="0"
+             data-fulltext="&lt;p&gt;The Meta advertising landscape has fundamentally changed. In earlier years, performance marketers spent endless hours tweaking manual demographic interest audiences, micro-targeting lookalikes, and tinkering with bidding hacks. Today, Meta's Andromeda and Advantage+ algorithms are vastly superior to manual targeting—provided you feed them the right variable: &lt;strong&gt;Creative&lt;/strong&gt;.&lt;/p&gt;&lt;p&gt;When running Meta campaigns today, your creative angle &lt;em&gt;is&lt;/em&gt; your targeting. If your video hook addresses parents of toddlers with sleep troubles, the algorithm immediately identifies users exhibiting high engagement with toddler sleep solutions. At TAVRICON, our framework utilizes Dynamic Creative Testing (DCT) batches of 3 visual hooks, 2 core messaging bodies, and 2 headline variants. We isolate the winning combinations with statistical significance before pouring scale budget into them. Coupling this with server-side Conversion API (CAPI) tracking ensures zero signal loss in post-iOS 14 auctions.&lt;/p&gt;&lt;p&gt;By treating creative as an empirical science, brands can insulate themselves against sudden CPM spikes and achieve repeatable 3x to 5x ROAS.&lt;/p&gt;">
+          <div class="featured-article-media">
+            <div style="text-align:center;">
+              <span class="badge badge-cyan" style="margin-bottom:12px;">Flagship Strategy Guide</span>
+              <h2 style="font-size:clamp(1.5rem, 2.5vw, 2.2rem); color:#FFFFFF; margin-bottom:12px;">The 2025 Meta Ads Playbook</h2>
+              <p style="font-size:0.85rem; color:var(--text-muted); font-family:var(--font-mono);">How to Scale ROAS in an AI-Algorithmic Auction Era</p>
+            </div>
+          </div>
+          <div class="featured-article-body">
+            <div class="article-meta">
+              <span class="badge badge-cyan">Paid Media</span>
+              <span>7 Min Read</span>
+              <span>By Aditya Singh</span>
+            </div>
+            <h3 class="featured-title" style="font-size:1.6rem; margin-bottom:14px; color:#FFFFFF;">How Creative Engineering Replaced Manual Interest Targeting on Meta</h3>
+            <p style="font-size:0.95rem; color:var(--text-muted); line-height:1.65; margin-bottom:20px;">
+              Why micromanaging ad sets is burning your capital, and how dynamic creative testing coupled with server-side CAPI builds predictable customer acquisition funnels.
+            </p>
+            <span class="btn btn-secondary btn-sm">Read Full Insight &rarr;</span>
+          </div>
+        </div>
+
+        <!-- Blog Articles Grid -->
+        <div class="blog-grid">
+
+          <!-- Article 1: Semantic SEO -->
+          <article class="blog-card fade-up stagger-1 blog-read-trigger" tabindex="0" data-category="seo"
+                   data-fulltext="<p>For over a decade, SEO practitioners treated search engines like keyword counters. You identified a primary keyword with search volume, stuffed it into title tags, headers, and meta descriptions, and waited for rankings. With Google's BERT, MUM, and generative AI search overviews, that approach is dead.</p><p>Modern search engines understand entities, semantic relationships, and search intent. To outrank entrenched competitors today, you must build <strong>Topic Clusters</strong>: comprehensive content hubs where a flagship pillar page is interconnected with supporting sub-topic articles that answer every conceivable query in the buyer journey. When search algorithms detect complete topical coverage backed by clean schema markup and fast Core Web Vitals, your domain earns true topic authority.</p>">
+            <div class="article-meta">
+              <span class="badge badge-royal">SEO Strategy</span>
+              <span>5 Min Read</span>
+            </div>
+            <h3 class="blog-card-title" style="font-size:1.25rem; margin-bottom:10px; color:#FFFFFF;">Why SEO Is No Longer Just Keywords: The Semantic Authority Era</h3>
+            <p class="blog-card-desc" style="font-size:0.88rem; color:var(--text-muted); margin-bottom:18px; line-height:1.6; flex-grow:1;">
+              How Google's algorithmic evolution requires brands to build topic cluster architectures rather than relying on isolated keyword density.
+            </p>
+            <span style="font-size:0.85rem; color:var(--cyan-primary); font-weight:600; display:inline-flex; align-items:center; gap:4px;">Read Article &rarr;</span>
+          </article>
+
+          <!-- Article 2: Agency Building / Founder Story -->
+          <article class="blog-card fade-up stagger-2 blog-read-trigger" tabindex="0" data-category="founder"
+                   data-fulltext="<p>Starting a boutique digital marketing agency from Jaipur with aspirations to serve international and enterprise clients requires absolute clarity of purpose. Many suggested presenting a manufactured facade of 50 remote employees and claiming Fortune 500 client logos from day one.</p><p>I rejected that path completely. True credibility does not come from inflating your size; it comes from transparency, technical competence, and treating client capital with sacred respect. When an agency is small and hungry, senior leaders work on your campaigns directly. You don't get passed off to interns. That boutique focus is precisely why $5,000+ clients prefer agile partners who deliver real ROAS over bloated corporate agencies.</p>">
+            <div class="article-meta">
+              <span class="badge badge-cyan">Founder Notes</span>
+              <span>4 Min Read</span>
+            </div>
+            <h3 class="blog-card-title" style="font-size:1.25rem; margin-bottom:10px; color:#FFFFFF;">Zero to One: Building a High-Performance Agency From Jaipur to the World</h3>
+            <p class="blog-card-desc" style="font-size:0.88rem; color:var(--text-muted); margin-bottom:18px; line-height:1.6; flex-grow:1;">
+              Why rejecting manufactured agency hype and embracing boutique senior focus creates far superior results for high-value clients.
+            </p>
+            <span style="font-size:0.85rem; color:var(--cyan-primary); font-weight:600; display:inline-flex; align-items:center; gap:4px;">Read Article &rarr;</span>
+          </article>
+
+          <!-- Article 3: Google Ads PMax vs Search -->
+          <article class="blog-card fade-up stagger-3 blog-read-trigger" tabindex="0" data-category="ppc"
+                   data-fulltext="<p>Google's Performance Max (PMax) campaign type was introduced as an all-in-one AI automated solution to capture demand across Search, YouTube, Display, Discover, Gmail, and Maps. But does it actually outperform dedicated Search and Shopping campaigns?</p><p>The answer depends on your tracking maturity. Without strict negative keyword lists and brand exclusions, PMax often cannibalizes cheap brand search queries to artificially inflate its reported ROAS. At TAVRICON, our architecture pairs exact-match Search campaigns for non-brand high-intent keywords with PMax campaigns that utilize curated audience signals and negative brand exclusions. This prevents budget cannibalization and ensures genuine incremental customer acquisition.</p>">
+            <div class="article-meta">
+              <span class="badge badge-royal">Google Ads</span>
+              <span>6 Min Read</span>
+            </div>
+            <h3 class="blog-card-title" style="font-size:1.25rem; margin-bottom:10px; color:#FFFFFF;">Google Performance Max vs. Manual Search: The Truth for B2B & Retail</h3>
+            <p class="blog-card-desc" style="font-size:0.88rem; color:var(--text-muted); margin-bottom:18px; line-height:1.6; flex-grow:1;">
+              How to prevent automated Google campaigns from cannibalizing your brand traffic while unlocking true incremental scale.
+            </p>
+            <span style="font-size:0.85rem; color:var(--cyan-primary); font-weight:600; display:inline-flex; align-items:center; gap:4px;">Read Article &rarr;</span>
+          </article>
+
+          <!-- Article 4: Email Retention -->
+          <article class="blog-card fade-up stagger-1 blog-read-trigger" tabindex="0" data-category="retention"
+                   data-fulltext="<p>Most e-commerce founders obsess over ad costs. They spend 95% of their mental bandwidth attempting to drop Cost Per Click by $0.10, while completely ignoring the post-purchase experience where 70% of pure profit resides.</p><p>Acquisition costs on digital platforms will only rise over time as auction competition grows. The only mathematical defense is expanding Customer Lifetime Value (LTV). By implementing 4 core automated email and WhatsApp lifecycle flows—an authentic Founder Story Welcome sequence, Browse Abandonment with dynamic product recommendations, a high-urgency Cart Recovery flow, and a VIP Repeat-Purchase incentive—brands can add 25% to 35% in high-margin revenue without spending an additional dollar on ads.</p>">
+            <div class="article-meta">
+              <span class="badge badge-cyan">Retention Marketing</span>
+              <span>5 Min Read</span>
+            </div>
+            <h3 class="blog-card-title" style="font-size:1.25rem; margin-bottom:10px; color:#FFFFFF;">How Automated Lifecycle Email Adds 30% In Pure Bottom-Line Profit</h3>
+            <p class="blog-card-desc" style="font-size:0.88rem; color:var(--text-muted); margin-bottom:18px; line-height:1.6; flex-grow:1;">
+              Why customer acquisition is only half the battle, and how systematic retention flows convert one-time buyers into lifetime profit.
+            </p>
+            <span style="font-size:0.85rem; color:var(--cyan-primary); font-weight:600; display:inline-flex; align-items:center; gap:4px;">Read Article &rarr;</span>
+          </article>
+
+          <!-- Article 5: AI Marketing Tools -->
+          <article class="blog-card fade-up stagger-2 blog-read-trigger" tabindex="0" data-category="ai"
+                   data-fulltext="<p>Artificial Intelligence in digital marketing is often misunderstood as typing a prompt into ChatGPT to generate a generic 500-word blog post. That is the lowest, least effective use of AI.</p><p>True competitive advantage comes from utilizing AI in data pipelines: real-time customer sentiment analysis, rapid multivariate ad hook generation, automated WhatsApp lead triage within 3 seconds of ad submission, and predictive churn modeling in CRMs. When repetitive operational tasks are automated by machine intelligence, human strategists can focus 100% of their energy on market positioning, creative breakthroughs, and high-level campaign optimization.</p>">
+            <div class="article-meta">
+              <span class="badge badge-royal">AI Marketing</span>
+              <span>6 Min Read</span>
+            </div>
+            <h3 class="blog-card-title" style="font-size:1.25rem; margin-bottom:10px; color:#FFFFFF;">The AI Marketing Revolution: Practical Systems That Scale Output</h3>
+            <p class="blog-card-desc" style="font-size:0.88rem; color:var(--text-muted); margin-bottom:18px; line-height:1.6; flex-grow:1;">
+              Moving past generic prompt toys to deploy real automated pipelines for lead routing, predictive bidding, and creative iteration.
+            </p>
+            <span style="font-size:0.85rem; color:var(--cyan-primary); font-weight:600; display:inline-flex; align-items:center; gap:4px;">Read Article &rarr;</span>
+          </article>
+
+          <!-- Article 6: Conversion Rate Optimization -->
+          <article class="blog-card fade-up stagger-3 blog-read-trigger" tabindex="0" data-category="ppc"
+                   data-fulltext="<p>If your website converts at 1.5% and you double your conversion rate to 3.0%, you effectively cut your customer acquisition costs in half overnight without touching your ad campaigns.</p><p>High-converting landing pages follow a strict psychological hierarchy: an immediate above-the-fold value proposition that answers 'What is this and why should I care?', friction-free page speed under 1.8 seconds on mobile devices, clear social proof badges, and single-action decision architecture. When traffic lands on a page engineered for clarity rather than artistic vanity, ROAS multiplies exponentially.</p>">
+            <div class="article-meta">
+              <span class="badge badge-cyan">Conversion Science</span>
+              <span>4 Min Read</span>
+            </div>
+            <h3 class="blog-card-title" style="font-size:1.25rem; margin-bottom:10px; color:#FFFFFF;">The Anatomy of a 5% Conversion Rate Landing Architecture</h3>
+            <p class="blog-card-desc" style="font-size:0.88rem; color:var(--text-muted); margin-bottom:18px; line-height:1.6; flex-grow:1;">
+              The exact UX, psychological, and speed principles we engineer into every client landing page to ensure traffic converts into paying customers.
+            </p>
+            <span style="font-size:0.85rem; color:var(--cyan-primary); font-weight:600; display:inline-flex; align-items:center; gap:4px;">Read Article &rarr;</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Global CTA Banner -->
+    <section class="cta-banner-section">
+      <div class="container">
+        <div class="cta-banner-card fade-up">
+          <span class="badge badge-cyan" style="margin-bottom:16px;">Actionable Strategy</span>
+          <h2 class="text-h1" style="max-width:760px; margin-inline:auto; margin-bottom:20px;">Want These Exact Frameworks Deployed In Your Business?</h2>
+          <p class="text-lead" style="max-width:640px; margin-inline:auto; margin-bottom:32px;">
+            We don't just write about growth strategyâ€”we execute it daily for high-ambition brands. Let's discuss your next campaign.
+          </p>
+          <div class="hero-cta-group" style="margin-bottom:0;">
+            <a href="contact.html" class="btn btn-primary btn-lg">Schedule A Growth Session</a>
+            <a href="work.html" class="btn btn-secondary btn-lg">Review Verified Case Studies</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- GLOBAL FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-lockup" style="margin-bottom:12px;">
+            <svg class="brand-logo-svg" viewBox="0 0 100 100" fill="none">
+              <path d="M12 36 L30 18 L76 18 L64 36 Z" fill="#00F2FE" />
+              <path d="M68 18 L86 6 L88 18 L72 36 Z" fill="#2563EB" />
+              <path d="M26 62 L48 44 L48 90 L34 90 L34 78 L26 84 Z" fill="#E2E8F0" />
+              <path d="M52 56 L64 48 L64 86 L52 92 Z" fill="#2563EB" />
+              <path d="M68 44 L80 34 L80 72 L68 80 Z" fill="#00F2FE" />
+            </svg>
+            <div class="brand-text-group">
+              <span class="brand-title">TAVRICON</span>
+              <span class="brand-tagline">GROWTH • INTELLIGENCE</span>
+            </div>
+          </a>
+          <p>
+            GROWTH. PERFORMANCE. INTELLIGENCE. High-yield digital marketing strategies for brands building durable market authority.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="footer-col-title">Navigation</h3>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About TAVRICON</a></li>
+            <li><a href="founder.html" class="footer-link">Founder Journey</a></li>
+            <li><a href="services.html" class="footer-link">Core Services</a></li>
+            <li><a href="work.html" class="footer-link">Work &amp; Case Studies</a></li>
+            <li><a href="blog.html" class="footer-link">Insights &amp; Blog</a></li>
+            <li><a href="contact.html" class="footer-link">Contact &amp; Proposals</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-col-title">Capabilities</h3>
+          <ul class="footer-links">
+            <li><a href="services.html#seo" class="footer-link">SEO Optimization</a></li>
+            <li><a href="services.html#ppc" class="footer-link">Performance PPC</a></li>
+            <li><a href="services.html#meta-ads" class="footer-link">Meta Ads (IG &amp; FB)</a></li>
+            <li><a href="services.html#google-ads" class="footer-link">Google Performance Max</a></li>
+            <li><a href="services.html#smm" class="footer-link">Social Media Marketing</a></li>
+            <li><a href="services.html#content" class="footer-link">Content Storytelling</a></li>
+            <li><a href="services.html#email" class="footer-link">Email Automation</a></li>
+            <li><a href="services.html#ai" class="footer-link">AI Growth Workflows</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-col-title">Direct Connect</h3>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-primary)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div>
+              <span style="display:block; font-size:0.75rem; color:var(--text-faint);">Phone / WhatsApp:</span>
+              <a href="tel:+919799111507" style="color:#FFFFFF; font-weight:600;">+91 97991 11507</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-primary)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <div>
+              <span style="display:block; font-size:0.75rem; color:var(--text-faint);">Phone / WhatsApp:</span>
+              <a href="tel:+919799111507" style="color:#FFFFFF; font-weight:600;">+91 97991 11507</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-primary)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <div>
+              <span style="display:block; font-size:0.75rem; color:var(--text-faint);">Primary Email:</span>
+              <a href="mailto:adityapratapsingh9211@gmail.com" style="color:#FFFFFF; font-weight:500; font-size:0.85rem;">adityapratapsingh9211@gmail.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 TAVRICON. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="privacy.html" class="footer-link">Privacy Policy</a>
+          <a href="terms.html" class="footer-link">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Global Modal Container for Article Reader -->
+  <div id="global-modal-overlay" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-container" id="global-modal-container" style="max-width:680px;">
+      <button id="modal-close-btn" class="modal-close-btn" aria-label="Close dialog">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <h3 id="modal-title" style="margin-bottom:16px; font-size:1.4rem; color:#FFFFFF;"></h3>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Floating Actions -->
+  <div class="floating-actions" aria-label="Quick Actions">
+    <a href="https://wa.me/919799111507" class="fab-whatsapp" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.97.53 1.77.818 2.796.818 3.18 0 5.767-2.587 5.767-5.766.001-3.182-2.585-5.804-5.767-5.804zm8.969 5.766c0 4.962-4.037 9-9 9-1.583 0-3.064-.413-4.354-1.135l-5.646 1.479 1.508-5.513c-.808-1.348-1.272-2.927-1.272-4.606 0-4.962 4.037-9 9-9 4.963 0 9 4.038 9 9z"/></svg>
+    </a>
+    <button class="back-to-top" aria-label="Back to top">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+  </div>
+
+  <script src="assets/js/sound.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/filters.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,315 @@
+/* ==========================================================================
+   TAVRICON DESIGN SYSTEM — ROYAL COBALT & NEON CYAN ANIMATIONS
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. SIGNATURE OPENING BRAND REVEAL SEQUENCE
+   -------------------------------------------------------------------------- */
+.brand-reveal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #02050E;
+  z-index: var(--z-reveal);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.brand-reveal-overlay.hide-reveal {
+  opacity: 0;
+  transform: translateY(-20px) scale(1.02);
+  pointer-events: none;
+}
+
+/* Royal Atmosphere background glow for reveal */
+.reveal-atmosphere {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 720px;
+  height: 720px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(0, 242, 254, 0.28) 0%, rgba(37, 99, 235, 0.45) 45%, rgba(139, 92, 246, 0.2) 65%, transparent 75%);
+  filter: blur(65px);
+  opacity: 0;
+  animation: atmospherePulseRoyal 2.5s ease-out forwards;
+}
+
+.reveal-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-4);
+  max-width: 900px;
+}
+
+/* Monogram Logo Construction in Reveal */
+.reveal-symbol-wrap {
+  width: 120px;
+  height: 120px;
+  margin-bottom: var(--space-6);
+  opacity: 0;
+  transform: scale(0.85) translateY(10px);
+  animation: symbolFormRoyal 1.3s 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  filter: drop-shadow(0 0 35px rgba(0, 242, 254, 0.65));
+}
+
+.reveal-symbol-wrap svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* TAVRICON Wordmark Reveal — Synchronized with Spoken Word */
+.reveal-brand-name {
+  font-family: var(--font-heading);
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: #FFFFFF;
+  line-height: 1;
+  margin-bottom: var(--space-3);
+  display: block;
+  text-align: center;
+  position: relative;
+  opacity: 0;
+  transform: scale(0.92) translateY(12px);
+  filter: blur(4px);
+  animation: wordmarkVoiceSurge 0.9s 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes wordmarkVoiceSurge {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translateY(12px);
+    filter: blur(4px);
+    text-shadow: 0 0 10px rgba(0, 242, 254, 0.2);
+  }
+  38% {
+    opacity: 1;
+    transform: scale(1.06) translateY(-2px);
+    filter: blur(0);
+    color: #FFFFFF;
+    text-shadow: 0 0 25px #00F2FE, 0 0 50px #38BDF8, 0 0 85px #2563EB, 0 0 115px rgba(0, 242, 254, 0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.0) translateY(0);
+    filter: blur(0);
+    color: #FFFFFF;
+    text-shadow: 0 0 20px rgba(0, 242, 254, 0.75), 0 4px 20px rgba(0, 0, 0, 0.9);
+  }
+}
+
+/* Tagline Reveal */
+.reveal-tagline {
+  font-family: var(--font-mono);
+  font-size: clamp(0.75rem, 1.4vw, 0.95rem);
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: var(--cyan-primary);
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: taglineEmerge 0.6s 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  text-shadow: 0 0 16px rgba(0, 242, 254, 0.5);
+}
+
+/* Light beam sweep across logo */
+.reveal-light-sweep {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 242, 254, 0.75), transparent);
+  transform: skewX(-25deg);
+  animation: lightSweep 0.9s 0.28s ease-in-out forwards;
+  pointer-events: none;
+}
+
+/* Skip Reveal Button */
+.skip-reveal-btn {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  background: rgba(7, 14, 34, 0.8);
+  border: 1px solid rgba(0, 242, 254, 0.35);
+  color: var(--cyan-bright);
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-family: var(--font-mono);
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  z-index: 10;
+  transition: all var(--transition-fast);
+}
+
+.skip-reveal-btn:hover {
+  background: rgba(0, 242, 254, 0.2);
+  color: #FFFFFF;
+  border-color: var(--cyan-primary);
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   2. KEYFRAME DEFINITIONS
+   -------------------------------------------------------------------------- */
+@keyframes atmospherePulseRoyal {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.6); }
+  60% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+  100% { opacity: 0.85; transform: translate(-50%, -50%) scale(1); }
+}
+
+@keyframes symbolFormRoyal {
+  0% {
+    opacity: 0;
+    transform: scale(0.75) translateY(20px);
+    filter: blur(12px) drop-shadow(0 0 0 rgba(0, 242, 254, 0));
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.04) translateY(-2px);
+    filter: blur(0px) drop-shadow(0 0 45px rgba(0, 242, 254, 0.85));
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0px) drop-shadow(0 0 32px rgba(37, 99, 235, 0.6));
+  }
+}
+
+@keyframes textEmerge {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+    letter-spacing: 0.06em;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    letter-spacing: 0.14em;
+  }
+}
+
+@keyframes taglineEmerge {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+    letter-spacing: 0.15em;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    letter-spacing: 0.3em;
+  }
+}
+
+@keyframes lightSweep {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+@keyframes pulseCyan, pulseGold {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 242, 254, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 242, 254, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 242, 254, 0);
+  }
+}
+
+@keyframes floatElement {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.float-anim {
+  animation: floatElement 6s ease-in-out infinite;
+}
+
+@keyframes rotateBeam {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes auroraShimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.aurora-shimmer {
+  background: linear-gradient(90deg, #00F2FE, #3B82F6, #8B5CF6, #00F2FE);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: auroraShimmer 6s ease infinite;
+}
+
+/* --------------------------------------------------------------------------
+   3. SCROLL REVEAL STAGGER UTILITIES
+   -------------------------------------------------------------------------- */
+.fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-up.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+
+@keyframes soundEqualizer {
+  0%, 100% {
+    height: 3px;
+    opacity: 0.6;
+  }
+  50% {
+    height: 12px;
+    opacity: 1;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. ACCESSIBILITY: REDUCED MOTION
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .brand-reveal-overlay {
+    display: none !important;
+  }
+
+  .fade-up {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="14" fill="#030712" />
+  <rect width="64" height="64" rx="14" stroke="#00F2FE" stroke-width="1.5" stroke-opacity="0.6" />
+  <defs>
+    <linearGradient id="favCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="30%" stop-color="#00F2FE" />
+      <stop offset="70%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#2563EB" />
+    </linearGradient>
+  </defs>
+  <!-- Chevron top in Neon Cyan -->
+  <path d="M12 24 L22 14 L50 14 L42 24 Z" fill="url(#favCyan)" />
+  <path d="M45 14 L54 6 L55 14 L48 24 Z" fill="url(#favCyan)" />
+  <!-- Pillars in Diamond White & Cobalt -->
+  <path d="M18 40 L30 28 L30 52 L22 52 L22 46 L18 50 Z" fill="#F8FAFC" />
+  <path d="M33 34 L40 28 L40 52 L33 55 Z" fill="url(#favCyan)" />
+  <path d="M43 27 L50 20 L50 44 L43 49 Z" fill="url(#favCyan)" />
+</svg>

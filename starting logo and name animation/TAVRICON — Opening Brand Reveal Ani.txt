@@ -1,0 +1,177 @@
+TAVRICON — Opening Brand Reveal Animation
+Final A.C.T.D.F. Specification
+A — ACT
+
+Role: The opening animation acts as TAVRICON's signature brand introduction.
+
+Its objectives are to:
+
+Introduce the brand immediately
+Create a strong first impression
+Establish premium/global positioning
+Build recognition for the logo and name
+Make the website feel like a serious, high-value agency
+
+Creative direction: Premium digital marketing agency × futuristic creative studio.
+
+C — CONTEXT
+
+The visitor should experience several feelings almost simultaneously:
+
+“This looks expensive.”
+“This agency is powerful.”
+“This feels modern and future-focused.”
+“This is different.”
+
+The animation should therefore not look like a generic website loader.
+
+It should feel like the beginning of a brand film, but compressed into a few seconds.
+
+For the marketing connection, I recommend subtle digital/growth cues, rather than obvious charts, graphs, or advertising imagery.
+
+T — TASK
+The reveal sequence
+
+0.0s — Black/deep royal screen
+
+The website opens on an almost-black version of TAVRICON's deep royal background.
+
+Very subtle atmospheric movement begins.
+
+No text yet.
+
+0.3s — Brand symbol begins forming
+
+The finalized TAVRICON logo symbol gradually emerges.
+
+Use light, geometry and depth, rather than particles exploding everywhere.
+
+The logo feels like it is being constructed, not simply faded in.
+
+1.0s — Logo locks into place
+
+The symbol becomes crisp.
+
+A very subtle glow/lighting pass moves across it.
+
+Then—
+
+1.2s — TAVRICON appears
+
+The word:
+
+TAVRICON
+
+appears large and dominant.
+
+This is the important part.
+
+Not a tiny logo sitting in the center.
+
+The visitor should actually see the TAVRICON name take over the screen.
+
+Typography should be extremely clean, premium and confident.
+
+1.8s — Brand statement
+
+I'd use a very short supporting line, rather than a long tagline.
+
+Something in the direction of:
+
+Marketing. Growth. What's Next.
+
+The exact wording can be refined later.
+
+2.3s — Cinematic transition
+
+The logo/name remain visible for a brief moment.
+
+Then the entire brand reveal smoothly transitions into the actual homepage hero.
+
+The transition should feel like:
+
+Brand → Website
+
+rather than:
+
+Animation → Loading → Website
+
+D — DETAILING
+Visual style
+
+Premium + cinematic + futuristic + energetic.
+
+But we're deliberately avoiding heavy effects.
+
+So:
+
+YES
+
+Light movement
+Elegant gradients
+Subtle glow
+Depth
+Geometric construction
+Smooth scaling
+Mask/reveal animation
+Sophisticated transitions
+
+NO
+
+Explosion effects
+Excessive particles
+Lightning
+Fire
+Huge lens flares
+Random 3D objects
+Gaming-style effects
+Long loading animation
+
+The logo itself remains the hero.
+
+Color
+
+Use the existing TAVRICON brand palette and darkened versions of it.
+
+The opening should primarily feel deep royal/dark, with controlled accents from the brand colors.
+
+Motion
+
+Motion should feel expensive.
+
+Think:
+
+slow enough to feel cinematic → fast enough to feel modern.
+
+No element should bounce unnecessarily.
+
+No cheesy spinning logo.
+
+F — FORMAT
+Recommended duration
+
+I would not make it 4 seconds.
+
+For a real agency website, I'd target approximately:
+
+2.5–3 seconds
+
+That's enough to create the signature moment without irritating visitors.
+
+First visit
+
+Full cinematic reveal.
+
+Returning visitors
+
+Use a shortened ~1 second version or transition directly into the homepage after the brand has already been established.
+
+Mobile
+
+Shorter and lighter than desktop, around 1.5–2 seconds.
+
+Performance
+
+The animation must not become a reason for the website to load slowly.
+
+The actual homepage should be ready underneath the reveal.

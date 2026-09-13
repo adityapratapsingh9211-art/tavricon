@@ -1,0 +1,97 @@
+TAVRICON — Blog Page A.C.T.D.F. Specification
+A — ACT
+
+The Blog will serve all major purposes:
+
+Educate visitors
+Establish TAVRICON as an authority
+Generate SEO traffic
+Attract potential clients
+Keep visitors engaged
+
+My role will be all of the above, with Digital Marketing Expert as the primary perspective.
+
+C — CONTEXT
+
+The content will serve all target audiences—from beginners and creators to startups, e-commerce businesses, established companies, Indian/local businesses, and international clients.
+
+The content identity will be a combination of:
+
+Practical strategies
+Easy-to-understand explanations
+Data/research
+Real-world marketing
+AI and future-focused insights
+Strong expert opinions
+
+The key is that TAVRICON should sound like an agency that actually understands marketing, not a website generating generic SEO articles.
+
+T — TASK
+
+The Blog will cover all relevant categories:
+
+SEO • Social Media • Google Ads • Meta Ads • Performance Marketing • Content Marketing • Email Marketing • AI Marketing • Automation • Branding • Business Growth • Digital Marketing Guides • Case Studies • Marketing Trends • TAVRICON Updates • Founder/Entrepreneurship
+
+Article discovery will use a combination of:
+
+Featured article
+Categories
+Search
+Latest articles
+Popular articles
+Recommended articles
+D — DETAILING
+
+The Blog will retain the TAVRICON premium visual language, combining:
+
+Deep Royal + Modern Premium + Editorial + Futuristic + Sophisticated Organic/Tropical
+
+The article cards will use a combination of:
+
+Large featured content
+Premium editorial cards
+Strong imagery
+Category labels
+Clear typography
+Short descriptions
+Subtle hover interactions
+Controlled animations
+
+Individual articles will have a polished reading experience with a combination of:
+
+Large hero
+Author
+Date
+Reading time
+Table of contents
+Related articles
+Social sharing
+Newsletter/lead capture
+Relevant service CTA
+F — FORMAT
+
+The conversion path will remain natural rather than aggressive:
+
+Discover article → Read → Gain value → Trust TAVRICON → Explore relevant service → Contact / Consultation
+
+The Blog shouldn't scream “BUY OUR SERVICES.”
+
+Instead, a reader should finish an article thinking:
+
+“These guys actually know what they're talking about.”
+
+And then naturally move toward TAVRICON's services or contact page.
+
+Recommended Blog Hero
+
+I would avoid the boring:
+
+“Welcome to the TAVRICON Blog.”
+
+Instead, something closer to:
+
+Ideas that turn marketing into growth.
+
+Supporting line:
+
+Practical insights, strategies and perspectives on digital marketing, AI, growth and the future of business.

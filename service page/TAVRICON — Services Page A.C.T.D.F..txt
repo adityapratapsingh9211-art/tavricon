@@ -1,0 +1,99 @@
+TAVRICON — Services Page A.C.T.D.F. Specification
+A — ACT
+Role: Digital marketing expert + strategist + conversion-focused UX designer.
+Purpose: Explain TAVRICON's capabilities, demonstrate expertise, build trust, and convert visitors into potential clients.
+C — CONTEXT
+Target audience: International businesses, Indian businesses, Jaipur/local businesses, startups, e-commerce brands, creators and personal brands.
+Positioning: TAVRICON should present its services as premium, modern, growth-focused, customized, and technology-driven rather than simply listing services.
+T — TASK
+
+The page will contain these 8 core services:
+
+SEO
+Social Media Marketing
+Performance Marketing / PPC
+Google Ads
+Meta Ads
+Content Marketing
+Email Marketing
+AI Marketing & Automation
+
+The services will initially appear together on one Services page, but each service should have enough information to understand:
+
+What it is
+What problem it solves
+What TAVRICON does
+Key benefits
+How the service contributes to growth
+A clear CTA
+
+For Google Ads and Meta Ads, I recommend presenting them as specialized capabilities under the broader Performance Marketing system visually, while still giving them their own service cards. That makes the offering look strategically structured rather than repetitive.
+
+D — DETAILING
+
+The page will follow the established TAVRICON visual identity:
+
+Deep royal + modern premium + sophisticated tropical + futuristic elements.
+
+I'll use a combination of:
+
+Premium service cards
+Subtle glass/solid surfaces
+Abstract marketing/data graphics
+Elegant gradients
+Strategic motion
+Hover interactions
+Scroll-based reveals
+Numbers/data-style visual elements
+Strong typography hierarchy
+Slightly rounded premium buttons
+
+Animation should feel expensive and intentional, not like a template full of effects.
+
+The service cards can have different visual personalities while still belonging to the same design system. The most important services can receive stronger visual emphasis.
+
+F — FORMAT
+
+The Services page should ultimately guide visitors through:
+
+Discover → Understand → Trust → Explore → Enquire
+
+Recommended structure:
+
+1. Services Hero
+A strong hook such as:
+
+Marketing built to move your business forward.
+
+Supporting copy + primary CTA + sophisticated animated visual.
+
+2. TAVRICON's Growth Approach
+A short explanation that we don't simply sell isolated marketing services—we combine the right channels around the client's growth objective.
+
+3. All Services
+The eight services displayed in a premium interactive grid.
+
+4. Individual Service Deep-Dives
+SEO → Social Media → Performance Marketing → Google Ads → Meta Ads → Content → Email → AI & Automation.
+
+5. How We Build Your Strategy
+Discover → Strategy → Execute → Optimize → Scale.
+
+6. Why TAVRICON
+Premium quality + customized strategy + modern technology + growth focus.
+
+7. FAQ
+
+8. Final Conversion Section
+
+Ready to turn attention into growth?
+
+With options such as:
+
+Start a Conversation
+Request a Proposal
+Book a Consultation
+
+The page's primary psychological takeaway should be:
+
+“TAVRICON doesn't just offer marketing services. They understand how these services work together to grow a business.”S

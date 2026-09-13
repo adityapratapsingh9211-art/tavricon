@@ -1,0 +1,191 @@
+TAVRICON — HOME PAGE A.C.T.D.F. MASTER BRIEF
+A — ACT
+
+Act as a digital marketing expert designing a professional business website.
+
+The homepage must simultaneously:
+
+Attract clients
+Generate leads
+Build credibility
+Explain TAVRICON
+Appeal to both Indian and international clients
+
+Avoid:
+
+Generic agency-template appearance
+Cheap-looking design
+Excessive animation
+C — CONTEXT
+
+Target audience:
+International businesses + Indian businesses + local/Jaipur businesses + startups + e-commerce brands + creators/personal brands.
+
+Core promise:
+TAVRICON helps businesses create a significant digital growth/marketing boom and acquire customers through effective digital marketing.
+
+Positioning:
+A future global agency that is just starting, combining:
+
+Premium boutique-agency character
+Young modern energy
+Global ambition
+
+The website should make a visitor think:
+
+“This is a serious agency with global ambitions—not a beginner's website.”
+
+T — TASK
+
+The homepage should contain:
+
+Hero
+
+Strong hook line
+Supporting paragraph
+TAVRICON logo/graphic
+Carefully designed animated visual
+
+Main sections
+
+Home/Hero
+Services
+TAVRICON About
+Why TAVRICON
+Founder Story
+Blog Preview
+Contact / Lead Generation
+FAQ
+Strong final conversion area
+
+Conversion:
+Multiple pathways are acceptable—consultation, contact, services, enquiry, etc.
+
+Pricing:
+We should not force pricing into the homepage. For a premium agency targeting different client levels, I recommend using “Request a Proposal / Get a Strategy Call” instead. We can decide the exact implementation later.
+
+D — DETAILING 🎨
+
+This is where I think your direction becomes interesting.
+
+Visual identity
+
+Deep Royal + Modern Premium + Tropical Aesthetic
+
+But I would interpret “tropical” carefully.
+
+Not:
+❌ Palm trees
+❌ Beach graphics
+❌ Tourist-resort aesthetics
+
+Instead:
+
+Tropical influence through organic shapes, flowing gradients, subtle natural forms, atmospheric visuals and sophisticated depth.
+
+That can make TAVRICON distinctive without destroying the premium agency feel.
+
+Color
+
+I'll professionally derive the website palette from your existing TAVRICON logo, rather than introducing unrelated colors.
+
+The logo should remain the visual anchor.
+
+Typography
+
+I'll select a combination that gives:
+
+Luxury + authority + modern readability
+
+rather than using an obviously “luxury” font everywhere.
+
+Animation
+
+Mixed, but controlled.
+
+Use animation where it improves:
+
+Attention
+Storytelling
+Navigation
+Visual hierarchy
+Perceived quality
+
+Avoid animation simply because it is possible.
+
+UI
+Premium slightly-rounded buttons
+Sophisticated cards
+Combination of solid / translucent / dimensional components
+Balanced whitespace
+Modern graphics
+Marketing/data-oriented visual elements
+Founder
+
+Your own image should primarily appear in the Founder section, where it contributes to trust and personality rather than being randomly placed throughout the homepage.
+
+Overall feeling
+
+Royal + expensive + modern + youthful + sophisticated + energetic + trustworthy.
+
+Not:
+Royal + flashy + overloaded.
+
+F — FORMAT
+
+The final product is:
+
+A full multi-page marketing website + lead-generation system
+
+with:
+
+Desktop
+Tablet
+Mobile
+Responsive layouts
+Professional UI/UX
+Animations/interactions
+Accessibility
+SEO structure
+Analytics
+Conversion tracking
+Lead forms
+Professional content structure
+Technical optimization
+Performance considerations
+
+And your ambition is essentially:
+
+“A $5,000 client should open the website and feel that TAVRICON belongs in the premium market.”
+
+That's a very good north star.
+
+🔥 One thing I would change in your original plan
+
+You originally had:
+
+Home | About | Founder | Services | Contact | Blog | Catalog | Story | Support...
+
+That's too much for the primary navigation.
+
+For TAVRICON, I'd eventually aim for something much cleaner:
+
+TAVRICON Logo | Home | About | Services | Work | Blog | Contact | Let's Talk
+
+Then:
+
+About
+→ Why TAVRICON
+→ Our Story
+→ Founder
+
+Services
+→ Individual services
+
+Work
+→ Portfolio
+→ Case Studies
+
+Resources
+→ Blog
+→ Guides/resources

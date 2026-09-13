@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" class="tavricon-svg-mark">
+  <defs>
+    <linearGradient id="tavCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="25%" stop-color="#E0F2FE" />
+      <stop offset="60%" stop-color="#00F2FE" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+    <linearGradient id="tavRoyal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60A5FA" />
+      <stop offset="50%" stop-color="#2563EB" />
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+    <linearGradient id="tavVelvet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155" />
+      <stop offset="50%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <filter id="cyanGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#00F2FE" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Top Chevron/Roof in Electric Neon Cyan -->
+  <path d="M12 36 L30 18 L76 18 L64 36 Z" fill="url(#tavCyan)" filter="url(#cyanGlow)" />
+  <path d="M68 18 L86 6 L88 18 L72 36 Z" fill="url(#tavRoyal)" />
+  <path d="M62 36 L70 48 L64 48 L56 36 Z" fill="url(#tavCyan)" />
+
+  <!-- Vertical Growth Pillars in Velvet Obsidian Slate with Royal Accents -->
+  <path d="M26 62 L48 44 L48 90 L34 90 L34 78 L26 84 Z" fill="url(#tavVelvet)" />
+  <path d="M52 56 L64 48 L64 86 L52 92 Z" fill="url(#tavRoyal)" />
+  <path d="M68 44 L80 34 L80 72 L68 80 Z" fill="url(#tavCyan)" />
+
+  <!-- High-Precision Telemetry / Growth Chart Lines -->
+  <line x1="56" y1="62" x2="62" y2="58" stroke="#00F2FE" stroke-width="1.8" stroke-linecap="round" />
+  <line x1="71" y1="52" x2="77" y2="48" stroke="#00F2FE" stroke-width="1.8" stroke-linecap="round" />
+  <circle cx="80" cy="34" r="2.8" fill="#FFFFFF" filter="url(#cyanGlow)" />
+</svg>

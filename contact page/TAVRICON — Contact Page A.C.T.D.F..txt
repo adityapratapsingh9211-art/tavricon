@@ -1,0 +1,120 @@
+TAVRICON — Contact Page A.C.T.D.F. Specification
+A — ACT
+Purpose: Make contacting TAVRICON easy, generate qualified leads, build trust, and start conversations.
+Design role: Digital marketing expert + conversion strategist + premium UX/UI designer + lead-generation specialist.
+C — CONTEXT
+
+The page should welcome:
+
+International clients
+Indian businesses
+Jaipur/local businesses
+Startups
+E-commerce brands
+Creators/personal brands
+People with an early-stage marketing idea
+
+The emotional response should be:
+
+“This agency is trustworthy, professional, understands business, and feels premium.”
+
+T — TASK
+
+The page will provide all relevant contact methods:
+
+Primary contact
+
+Lead/contact form
+Email
+Phone
+WhatsApp
+Social media
+Consultation/call option
+Contact Form
+
+We'll collect:
+
+Name*
+Email*
+Phone / WhatsApp
+Company / Business Name
+Website / Social Media
+Service you're interested in
+Budget range
+Marketing problem / goals
+Additional project details
+
+But the form should remain visually clean and straightforward—not feel like an application form.
+
+D — DETAILING
+
+The Contact page will maintain the established TAVRICON deep-royal + premium + sophisticated tropical + modern/futuristic identity.
+
+I'll use a simple traditional form, but make the surrounding experience premium through:
+
+Strong typography
+Elegant spacing
+Premium input fields
+Subtle animation
+Sophisticated background graphics
+Clear CTA
+Trust elements
+A concise personal message from Aditya Singh
+Selected social/contact information
+Small FAQ section where useful
+
+I would not put a huge map or unnecessary office imagery on the page unless TAVRICON actually has a physical office you want clients to visit. For an international-facing agency, that space is better used for conversion and credibility.
+
+F — FORMAT
+
+Recommended page flow:
+
+01 — Contact Hero
+
+Let's build something that grows.
+
+Short, confident supporting copy + primary CTA.
+
+02 — Direct Contact
+
+Phone | Email | WhatsApp | Social
+
+03 — Contact Form
+
+A clean, premium traditional form with a strong CTA such as:
+
+Start the Conversation
+
+04 — Personal Founder Message
+
+A short message from Aditya Singh to make the agency feel human rather than corporate.
+
+05 — What Happens Next
+
+Simple 3-step explanation:
+
+You reach out → We understand your goals → We discuss the right strategy
+
+06 — FAQ / Reassurance
+
+Answer common concerns before submission.
+
+07 — Final CTA
+
+Your next stage of growth can start with one conversation.
+
+Contact Details
+
+Phone: +91 97991 11507
+Email: adityapratapsingh9211@gmail.com
+WhatsApp: +91 97991 11507
+
+After Form Submission
+
+The experience will provide:
+
+Instant confirmation message
+Email confirmation
+WhatsApp option
+
+One important conversion decision: I recommend making the form the primary action, with WhatsApp and direct contact as secondary options. That keeps the page professional for international clients while still making it extremely easy for Indian/local prospects to contact you.

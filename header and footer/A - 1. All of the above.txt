@@ -1,0 +1,91 @@
+TAVRICON — Header + Footer A.C.T.D.F. Specification
+A — ACT
+
+The global Header + Footer will:
+
+Make navigation effortless
+Establish the TAVRICON premium identity
+Help visitors discover important content
+Drive conversions
+Work across desktop, tablet and mobile
+
+My role: Digital Marketing Expert + Premium UI/UX Designer + Conversion Strategist + Brand Strategist.
+
+C — CONTEXT
+Header Navigation
+
+Your chosen navigation:
+
+TAVRICON Logo | Home | Founder | About | Services | Work | Blog | Contact | Let's Talk
+
+I recommend keeping Let's Talk as the visually strongest element rather than adding more navigation items.
+
+One small structural change I'd make: About should come before Founder:
+
+Home → About → Founder → Services → Work → Blog → Contact
+
+This creates a more natural story:
+
+Who we are → Who founded us → What we do → What we've done → Insights → Contact
+
+T — TASK
+Header behavior
+
+I'll use a dynamic sticky header:
+
+At the top: clean/partially transparent
+↓
+While scrolling: becomes compact with a refined solid/blurred premium background.
+
+It will remain accessible without taking too much screen space.
+
+Footer
+
+The footer will contain:
+
+TAVRICON logo
+Short brand statement
+Services links
+Social media links
+Newsletter signup
+Privacy Policy
+Terms & Conditions
+Copyright
+
+I would keep the footer focused rather than stuffing every possible link into it.
+
+D — DETAILING
+
+The Header + Footer will follow:
+
+Deep Royal + Premium + Modern + Sophisticated + Subtle Futuristic/Organic
+
+Header
+Elegant typography
+Strong logo presence
+Clean navigation
+Premium CTA
+Subtle hover effects
+Smooth transitions
+Sticky/scroll behavior
+Mobile
+
+We'll use a premium mobile navigation system rather than squeezing all links onto the screen.
+
+Likely flow:
+
+Logo + Let's Talk + Menu icon
+
+Then a clean animated navigation panel containing all pages.
+
+Animation
+
+Subtle → smooth → intentional.
+
+No unnecessary bouncing, spinning, or flashy effects.
+
+F — FORMAT
+
+The Header/Footer should make a visitor immediately understand:
+
+TAVRICON is a professional digital marketing agency.

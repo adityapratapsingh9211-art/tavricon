@@ -1,0 +1,6 @@
+﻿server.ps1
+deploy_github.ps1
+*.log
+.DS_Store
+Thumbs.db
+*.tmp
