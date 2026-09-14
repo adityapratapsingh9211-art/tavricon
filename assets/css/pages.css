@@ -432,7 +432,7 @@
    -------------------------------------------------------------------------- */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
   gap: var(--space-6);
 }
 
@@ -516,7 +516,7 @@
    -------------------------------------------------------------------------- */
 .work-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
   gap: var(--space-8);
 }
 
@@ -681,7 +681,7 @@
 
 .blog-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
   gap: var(--space-6);
 }
 
@@ -828,6 +828,7 @@
   padding: clamp(var(--space-8), 6vw, var(--space-16));
   text-align: center;
   position: relative;
+  overflow: hidden;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75), 0 0 45px rgba(0, 242, 254, 0.22);
 }
 
@@ -909,6 +910,29 @@
   }
 }
 
+@media (max-width: 640px) {
+  .services-grid,
+  .work-grid,
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sim-cta-row {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .sim-guarantee-note {
+    justify-content: center;
+    text-align: center;
+  }
+
+  #sim-lock-strategy-btn {
+    width: 100%;
+  }
+}
+
 @media (max-width: 560px) {
   .sim-metrics-grid {
     grid-template-columns: 1fr;
@@ -917,5 +941,45 @@
   .simulator-header {
     flex-direction: column;
     align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  .mode-toggle-group {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .mode-toggle-btn {
+    flex: 1;
+    text-align: center;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+  }
+
+  .social-qr-triggers {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider-ticks span:nth-child(2),
+  .slider-ticks span:nth-child(3),
+  .slider-ticks span:nth-child(4) {
+    display: none;
+  }
+
+  .slider-dynamic-val {
+    font-size: 1.35rem;
+  }
+
+  .simulator-card {
+    padding: var(--space-5);
   }
 }
