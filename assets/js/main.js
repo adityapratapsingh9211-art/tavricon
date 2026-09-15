@@ -4,7 +4,7 @@
  * 3D Card Tilt, and Interactive Growth & ROAS Simulator Engine
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+const initApp = () => {
   // --------------------------------------------------------------------------
   // 1. DYNAMIC CURSOR AMBIENT LIGHT ORB
   // --------------------------------------------------------------------------
@@ -320,6 +320,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // 12. WELCOME POPUP MODAL (Triggers 5s after opening, Optional)
   // --------------------------------------------------------------------------
   const initWelcomeModal = () => {
+    try {
+      sessionStorage.removeItem('tavricon_welcome_shown');
+      localStorage.removeItem('tavricon_welcome_shown');
+    } catch (e) {}
+
     let welcomeOverlay = document.getElementById('welcome-modal-overlay');
 
     // If modal container is not in static HTML, dynamically construct it so it triggers on any page
@@ -330,7 +335,7 @@ document.addEventListener('DOMContentLoaded', () => {
       welcomeOverlay.setAttribute('role', 'dialog');
       welcomeOverlay.setAttribute('aria-modal', 'true');
       welcomeOverlay.setAttribute('aria-labelledby', 'welcome-modal-heading');
-      welcomeOverlay.style.zIndex = 'calc(var(--z-modal) + 2)';
+      welcomeOverlay.style.cssText = 'display:none; z-index:999999;';
       welcomeOverlay.innerHTML = `
         <div class="modal-container welcome-modal-container card-beam" id="welcome-modal-card">
           <button id="welcome-modal-close" class="modal-close-btn" aria-label="Close welcome form" type="button">
@@ -439,13 +444,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const welcomeContinueBtn = welcomeOverlay.querySelector('#welcome-continue-btn');
 
     const openWelcomeModal = () => {
-      // If brand reveal is currently animating on index.html, wait until it finishes
+      // Ensure brand reveal is dismissed so it never blocks the modal
       const brandReveal = document.getElementById('brand-reveal');
-      if (brandReveal && !brandReveal.classList.contains('hide-reveal') && brandReveal.style.display !== 'none') {
-        setTimeout(openWelcomeModal, 1500);
-        return;
+      if (brandReveal) {
+        brandReveal.classList.add('hide-reveal');
+        brandReveal.style.display = 'none';
       }
 
+      welcomeOverlay.style.display = 'flex';
+      welcomeOverlay.style.opacity = '1';
+      welcomeOverlay.style.visibility = 'visible';
+      welcomeOverlay.style.pointerEvents = 'auto';
+      welcomeOverlay.style.zIndex = '999999';
       welcomeOverlay.classList.add('active');
       document.body.style.overflow = 'hidden';
 
@@ -456,10 +466,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const closeWelcomeModal = () => {
       welcomeOverlay.classList.remove('active');
+      welcomeOverlay.style.opacity = '0';
+      welcomeOverlay.style.pointerEvents = 'none';
+      setTimeout(() => {
+        if (!welcomeOverlay.classList.contains('active')) {
+          welcomeOverlay.style.display = 'none';
+          welcomeOverlay.style.visibility = 'hidden';
+        }
+      }, 300);
       document.body.style.overflow = '';
     };
 
-    // Trigger reliably after 5 seconds (within 5-10 second requirement)
+    // Expose functions globally for testability & external hooks
+    window.openWelcomePopup = openWelcomeModal;
+    window.closeWelcomePopup = closeWelcomeModal;
+
+    // Trigger reliably after 5.0 seconds (user requested 5-10 sec window)
     setTimeout(openWelcomeModal, 5000);
 
     if (welcomeCloseBtn) {
@@ -536,4 +558,10 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   initWelcomeModal();
-});
+};
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}

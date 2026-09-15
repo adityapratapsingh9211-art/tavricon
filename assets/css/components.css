@@ -965,6 +965,16 @@
 }
 
 /* Welcome Popup Modal */
+#welcome-modal-overlay {
+  z-index: 999999 !important;
+}
+
+#welcome-modal-overlay.active {
+  display: flex !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
 .welcome-modal-container {
   max-width: 480px;
   width: 100%;
