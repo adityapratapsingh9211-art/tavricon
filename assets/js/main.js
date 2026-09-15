@@ -317,22 +317,38 @@ const initApp = () => {
   }
 
   // --------------------------------------------------------------------------
-  // 12. WELCOME POPUP MODAL (Triggers Once per session upon opening site)
+  // 12. WELCOME POPUP MODAL (Triggers ONLY ONCE on home page opening)
   // --------------------------------------------------------------------------
   const initWelcomeModal = () => {
-    // 1. Only show once per browser session / visit across the entire website
+    // 1. Strict Page Gate: NEVER run on subpages (About, Founder, Services, Work, Blog, Contact, etc.)
+    const currentPath = window.location.pathname.toLowerCase();
+    const isSubpage = currentPath.includes('about') ||
+                      currentPath.includes('founder') ||
+                      currentPath.includes('service') ||
+                      currentPath.includes('work') ||
+                      currentPath.includes('blog') ||
+                      currentPath.includes('contact') ||
+                      currentPath.includes('privacy') ||
+                      currentPath.includes('terms');
+
+    if (isSubpage) {
+      return; // Absolutely zero popup execution on subpages
+    }
+
+    // 2. Only run if static #welcome-modal-overlay exists in HTML
+    const welcomeOverlay = document.getElementById('welcome-modal-overlay');
+    if (!welcomeOverlay) {
+      return;
+    }
+
+    // 3. Show ONLY ONCE: Check if already shown or dismissed
     try {
-      if (sessionStorage.getItem('tavricon_welcome_shown_session') === 'true') {
+      if (localStorage.getItem('tavricon_welcome_dismissed') === 'true' || 
+          sessionStorage.getItem('tavricon_welcome_dismissed') === 'true' ||
+          sessionStorage.getItem('tavricon_welcome_shown_session') === 'true') {
         return;
       }
     } catch (e) {}
-
-    // 2. Only target the landing/home page where #welcome-modal-overlay is in the HTML
-    const welcomeOverlay = document.getElementById('welcome-modal-overlay');
-    if (!welcomeOverlay) {
-      // Do not construct on internal pages (About, Work, Services, Contact, etc.)
-      return;
-    }
 
     const welcomeCloseBtn = welcomeOverlay.querySelector('#welcome-modal-close');
     const welcomeSkipBtn = welcomeOverlay.querySelector('#welcome-skip-btn');
@@ -344,8 +360,10 @@ const initApp = () => {
     const welcomeWaFasttrack = welcomeOverlay.querySelector('#welcome-wa-fasttrack');
     const welcomeContinueBtn = welcomeOverlay.querySelector('#welcome-continue-btn');
 
-    const markShownInSession = () => {
+    const markDismissed = () => {
       try {
+        localStorage.setItem('tavricon_welcome_dismissed', 'true');
+        sessionStorage.setItem('tavricon_welcome_dismissed', 'true');
         sessionStorage.setItem('tavricon_welcome_shown_session', 'true');
       } catch (e) {}
     };
@@ -366,7 +384,7 @@ const initApp = () => {
       welcomeOverlay.classList.add('active');
       document.body.style.overflow = 'hidden';
 
-      markShownInSession();
+      markDismissed();
 
       if (window.tavriconSound) {
         window.tavriconSound.playClick(0.9);
@@ -384,7 +402,7 @@ const initApp = () => {
         }
       }, 300);
       document.body.style.overflow = '';
-      markShownInSession();
+      markDismissed();
     };
 
     // Expose functions globally for testability & external hooks
@@ -430,7 +448,7 @@ const initApp = () => {
     if (welcomeForm) {
       welcomeForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        markShownInSession();
+        markDismissed();
         const nameVal = (welcomeOverlay.querySelector('#welcome-name')?.value || '').trim();
         const phoneVal = (welcomeOverlay.querySelector('#welcome-phone')?.value || '').trim();
         const emailVal = (welcomeOverlay.querySelector('#welcome-email')?.value || '').trim();
