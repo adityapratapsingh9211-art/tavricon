@@ -556,6 +556,115 @@
                     linear-gradient(to bottom, #00F2FE 1px, transparent 1px);
 }
 
+.work-media-real-png {
+  height: 155px;
+  width: auto;
+  max-width: 80%;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 25px rgba(0, 242, 254, 0.3)) drop-shadow(0 0 15px rgba(37, 99, 235, 0.22));
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), filter 0.45s ease;
+  user-select: none;
+  pointer-events: none;
+  z-index: 2;
+  position: relative;
+}
+
+.work-card:hover .work-media-real-png {
+  transform: scale(1.08) translateY(-4px);
+  filter: drop-shadow(0 14px 35px rgba(0, 242, 254, 0.48)) drop-shadow(0 0 25px rgba(37, 99, 235, 0.35));
+}
+
+@media (max-width: 480px) {
+  .work-media-real-png {
+    height: 130px;
+    max-width: 85%;
+  }
+}
+
+/* Hero Showcase Split — Luxury Wall Mockup + 3D Floating Hardware */
+.hero-showcase-split {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.showcase-primary-frame img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+  max-height: 400px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.showcase-floating-telemetry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.telemetry-device-wrap {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  animation: floatSubtle 6s ease-in-out infinite;
+}
+
+.showcase-device-png {
+  max-height: 330px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 16px 36px rgba(0, 242, 254, 0.36)) drop-shadow(0 0 24px rgba(37, 99, 235, 0.3));
+  transition: transform 0.4s ease;
+}
+
+.showcase-device-png:hover {
+  transform: scale(1.04) rotate(-1deg);
+}
+
+.telemetry-floating-pill {
+  position: absolute;
+  bottom: 8px;
+  background: rgba(3, 7, 18, 0.94);
+  border: 1px solid rgba(0, 242, 254, 0.45);
+  border-radius: var(--radius-full);
+  padding: 6px 14px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--cyan-bright);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 242, 254, 0.3);
+  backdrop-filter: blur(10px);
+  white-space: nowrap;
+}
+
+@keyframes floatSubtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@media (max-width: 860px) {
+  .hero-showcase-split {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  .showcase-device-png {
+    max-height: 250px;
+  }
+}
+
 .work-metric-badge {
   position: absolute;
   bottom: 16px;
@@ -569,6 +678,7 @@
   font-weight: 700;
   color: var(--cyan-bright);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  z-index: 3;
 }
 
 .work-body {

@@ -8,11 +8,11 @@
   <link rel="icon" type="image/svg+xml" href="assets/images/logo/favicon.svg">
   
   <!-- Design System Stylesheets -->
-  <link rel="stylesheet" href="assets/css/variables.css?v=3.2">
-  <link rel="stylesheet" href="assets/css/base.css?v=3.2">
-  <link rel="stylesheet" href="assets/css/components.css?v=3.2">
-  <link rel="stylesheet" href="assets/css/animations.css?v=3.2">
-  <link rel="stylesheet" href="assets/css/pages.css?v=3.2">
+  <link rel="stylesheet" href="assets/css/variables.css?v=3.3">
+  <link rel="stylesheet" href="assets/css/base.css?v=3.3">
+  <link rel="stylesheet" href="assets/css/components.css?v=3.3">
+  <link rel="stylesheet" href="assets/css/animations.css?v=3.3">
+  <link rel="stylesheet" href="assets/css/pages.css?v=3.3">
 </head>
 <body>
 
@@ -278,19 +278,32 @@
           </div>
         </div>
 
-        <!-- Featured Brand Visual Frame -->
-        <div style="margin-top:clamp(20px, 4vw, 40px); width:100%; max-width:980px;" class="fade-up stagger-5">
-          <div class="glass-card card-beam" style="padding:16px; border-color:rgba(0,242,254,0.3); background:rgba(7,14,34,0.85);">
-            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; padding:8px 16px; border-bottom:1px solid var(--border-subtle); margin-bottom:16px;">
+        <!-- Featured Brand Visual Frame with Real-Life 3D Telemetry Device -->
+        <div style="margin-top:clamp(20px, 4vw, 40px); width:100%; max-width:1080px;" class="fade-up stagger-5">
+          <div class="glass-card card-beam" style="padding:clamp(14px, 2.5vw, 24px); border-color:rgba(0,242,254,0.3); background:rgba(7,14,34,0.85);">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; padding-bottom:14px; border-bottom:1px solid var(--border-subtle); margin-bottom:20px;">
               <div style="display:flex; align-items:center; flex-wrap:wrap; gap:8px;">
                 <span style="width:10px; height:10px; border-radius:50%; background:#EF4444; flex-shrink:0;"></span>
                 <span style="width:10px; height:10px; border-radius:50%; background:#F59E0B; flex-shrink:0;"></span>
                 <span style="width:10px; height:10px; border-radius:50%; background:#00F2FE; flex-shrink:0;"></span>
                 <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--cyan-light); margin-left:4px; word-break:break-word;">TAVRICON Royal Intelligence Suite v3.0</span>
               </div>
-              <span class="badge badge-cyan" style="flex-shrink:0;">Verified Pipeline</span>
+              <span class="badge badge-cyan" style="flex-shrink:0;">Verified Pipeline • 4.8X ROAS</span>
             </div>
-            <img src="assets/images/logo/tavricon-wall-mockup.png" alt="TAVRICON Executive Brand Identity" style="width:100%; border-radius:var(--radius-lg); object-fit:cover; max-height:480px;">
+            <div class="hero-showcase-split">
+              <div class="showcase-primary-frame">
+                <img src="assets/images/logo/tavricon-wall-mockup.png" alt="TAVRICON Executive Brand Identity" style="width:100%; border-radius:var(--radius-lg); object-fit:cover; max-height:380px;">
+              </div>
+              <div class="showcase-floating-telemetry">
+                <div class="telemetry-device-wrap">
+                  <img src="assets/images/showcase/floating-device-roas.png" alt="Real-Life Meta Ads & Shopify 4.8X ROAS Performance Device" class="showcase-device-png" loading="lazy">
+                  <div class="telemetry-floating-pill">
+                    <span class="live-dot" style="background:#00F2FE;"></span>
+                    <span>LIVE 4.8X BLENDED ROAS</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -531,11 +544,11 @@
         </div>
 
         <div class="work-grid">
-          <!-- Case Study 1 -->
+          <!-- Case Study 1: Luxury DTC E-Commerce -->
           <div class="work-card fade-up stagger-1" data-challenge="Scaling a high-ticket DTC brand while reducing rising customer acquisition costs on Meta." data-strategy="Replaced broad targeting with dynamic creative hooks segmented by customer pain points, coupled with a customized landing page." data-execution="Tested 24 creative angles in 14 days, reallocating 75% of budget to top 3 winning hooks." data-results="3.4x ROAS achieved with a 38% decrease in blended CPA within 45 days.">
             <div class="work-media">
               <div class="work-media-bg-pattern"></div>
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-primary)" stroke-width="1.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              <img src="assets/images/showcase/case-dtc-luxury.png" alt="High-Ticket Luxury DTC Brand Scaled to 3.4x ROAS" class="work-media-real-png" loading="lazy" decoding="async">
               <div class="work-metric-badge">+340% ROAS Scaled</div>
             </div>
             <div class="work-body">
@@ -546,11 +559,11 @@
             </div>
           </div>
 
-          <!-- Case Study 2 -->
+          <!-- Case Study 2: B2B Search Domination -->
           <div class="work-card fade-up stagger-2" data-challenge="A B2B enterprise service provider had zero organic visibility for high-value transactional search terms." data-strategy="Engineered a semantic topic cluster architecture with 15 authoritative pillar articles and technical crawl budget optimization." data-execution="Restructured internal link graph and secured high-trust editorial citations." data-results="+410% organic search traffic growth and 85+ qualified enterprise leads in 90 days.">
             <div class="work-media">
               <div class="work-media-bg-pattern"></div>
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-primary)" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              <img src="assets/images/showcase/case-b2b-analytics.png" alt="B2B SEO Keyword Analytics Domination" class="work-media-real-png" loading="lazy" decoding="async">
               <div class="work-metric-badge">Rank #1 - #3 Clusters</div>
             </div>
             <div class="work-body">
@@ -561,11 +574,11 @@
             </div>
           </div>
 
-          <!-- Case Study 3 -->
+          <!-- Case Study 3: Regional Retail & WhatsApp Funnel -->
           <div class="work-card fade-up stagger-3" data-challenge="A local retail chain in Rajasthan struggled to transition foot traffic into predictable online inquiries." data-strategy="Hyper-local Google Business Profile optimization paired with localized Meta geo-targeted video reels and WhatsApp automation." data-execution="Integrated 1-click WhatsApp booking with instant automated greetings and localized promotional schedules." data-results="2,400+ verified customer chats initiated and 62% in-store coupon redemption rate.">
             <div class="work-media">
               <div class="work-media-bg-pattern"></div>
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--royal-light)" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <img src="assets/images/showcase/case-retail-package.png" alt="Luxury Regional Retail & WhatsApp Lead Conversion" class="work-media-real-png" loading="lazy" decoding="async">
               <div class="work-metric-badge">2,400+ WhatsApp Leads</div>
             </div>
             <div class="work-body">
@@ -912,9 +925,9 @@
   </div>
 
   <!-- JavaScript Scripts -->
-  <script src="assets/js/sound.js?v=3.2"></script>
-  <script src="assets/js/reveal.js?v=3.2"></script>
-  <script src="assets/js/main.js?v=3.2"></script>
-  <script src="assets/js/filters.js?v=3.2"></script>
+  <script src="assets/js/sound.js?v=3.3"></script>
+  <script src="assets/js/reveal.js?v=3.3"></script>
+  <script src="assets/js/main.js?v=3.3"></script>
+  <script src="assets/js/filters.js?v=3.3"></script>
 </body>
 </html>
