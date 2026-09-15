@@ -317,54 +317,150 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------------------------------
-  // 12. WELCOME POPUP MODAL (Triggers 5-10s after opening, Optional)
+  // 12. WELCOME POPUP MODAL (Triggers 5s after opening, Optional)
   // --------------------------------------------------------------------------
-  const welcomeOverlay = document.getElementById('welcome-modal-overlay');
-  if (welcomeOverlay) {
-    const welcomeCloseBtn = document.getElementById('welcome-modal-close');
-    const welcomeSkipBtn = document.getElementById('welcome-skip-btn');
-    const welcomeForm = document.getElementById('welcome-lead-form');
-    const welcomeFormWrapper = document.getElementById('welcome-form-wrapper');
-    const welcomeSuccessState = document.getElementById('welcome-success-state');
-    const welcomeSuccessTitle = document.getElementById('welcome-success-title');
-    const welcomeSuccessDesc = document.getElementById('welcome-success-desc');
-    const welcomeWaFasttrack = document.getElementById('welcome-wa-fasttrack');
-    const welcomeContinueBtn = document.getElementById('welcome-continue-btn');
+  const initWelcomeModal = () => {
+    let welcomeOverlay = document.getElementById('welcome-modal-overlay');
+
+    // If modal container is not in static HTML, dynamically construct it so it triggers on any page
+    if (!welcomeOverlay) {
+      welcomeOverlay = document.createElement('div');
+      welcomeOverlay.id = 'welcome-modal-overlay';
+      welcomeOverlay.className = 'modal-overlay';
+      welcomeOverlay.setAttribute('role', 'dialog');
+      welcomeOverlay.setAttribute('aria-modal', 'true');
+      welcomeOverlay.setAttribute('aria-labelledby', 'welcome-modal-heading');
+      welcomeOverlay.style.zIndex = 'calc(var(--z-modal) + 2)';
+      welcomeOverlay.innerHTML = `
+        <div class="modal-container welcome-modal-container card-beam" id="welcome-modal-card">
+          <button id="welcome-modal-close" class="modal-close-btn" aria-label="Close welcome form" type="button">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+          <div id="welcome-form-wrapper">
+            <div class="welcome-modal-header">
+              <span class="badge badge-cyan" style="gap:6px;">
+                <span class="live-dot" style="background:#00F2FE;"></span>
+                Welcome to TAVRICON
+              </span>
+              <h3 class="welcome-modal-title" id="welcome-modal-heading">Let's Personalize Your Growth Path</h3>
+              <p class="welcome-modal-subtitle">
+                Introduce yourself to receive custom growth perspectives, or feel free to skip and explore the intelligence suite.
+              </p>
+            </div>
+            <form id="welcome-lead-form" novalidate>
+              <div class="form-group" style="margin-bottom:12px;">
+                <label for="welcome-name" class="form-label" style="display:flex; justify-content:space-between; align-items:center;">
+                  <span>Name</span>
+                  <span style="font-size:0.75rem; color:var(--text-faint); font-weight:normal;">(Optional)</span>
+                </label>
+                <div class="welcome-input-wrap">
+                  <span class="welcome-input-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </span>
+                  <input type="text" id="welcome-name" class="form-input" placeholder="Your Name (e.g. Aditya / Sarah)" autocomplete="name">
+                </div>
+              </div>
+              <div class="form-group" style="margin-bottom:12px;">
+                <label for="welcome-phone" class="form-label" style="display:flex; justify-content:space-between; align-items:center;">
+                  <span>Phone / WhatsApp Number</span>
+                  <span style="font-size:0.75rem; color:var(--text-faint); font-weight:normal;">(Optional)</span>
+                </label>
+                <div class="welcome-input-wrap">
+                  <span class="welcome-input-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  </span>
+                  <input type="tel" id="welcome-phone" class="form-input" placeholder="+91 / WhatsApp Number" autocomplete="tel">
+                </div>
+              </div>
+              <div class="form-group" style="margin-bottom:12px;">
+                <label for="welcome-email" class="form-label" style="display:flex; justify-content:space-between; align-items:center;">
+                  <span>Gmail / Email</span>
+                  <span style="font-size:0.75rem; color:var(--text-faint); font-weight:normal;">(Optional)</span>
+                </label>
+                <div class="welcome-input-wrap">
+                  <span class="welcome-input-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  </span>
+                  <input type="email" id="welcome-email" class="form-input" placeholder="yourname@gmail.com" autocomplete="email">
+                </div>
+              </div>
+              <div class="form-group" style="margin-bottom:18px;">
+                <label for="welcome-work" class="form-label" style="display:flex; justify-content:space-between; align-items:center;">
+                  <span>Work / Business / Brand</span>
+                  <span style="font-size:0.75rem; color:var(--text-faint); font-weight:normal;">(Optional)</span>
+                </label>
+                <div class="welcome-input-wrap">
+                  <span class="welcome-input-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                  </span>
+                  <input type="text" id="welcome-work" class="form-input" placeholder="e.g. E-Commerce, Local Business, Agency" autocomplete="organization">
+                </div>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:10px;">
+                <button type="submit" id="welcome-submit-btn" class="btn btn-primary" style="width:100%;">
+                  Continue to TAVRICON &rarr;
+                </button>
+                <button type="button" id="welcome-skip-btn" class="btn btn-ghost" style="width:100%; font-size:0.85rem; color:var(--text-muted); padding:8px;">
+                  Skip for now &amp; explore website &rarr;
+                </button>
+              </div>
+            </form>
+          </div>
+          <div id="welcome-success-state" style="display:none; text-align:center; padding:12px 4px;">
+            <div style="width:52px; height:52px; border-radius:50%; background:var(--aurora-gradient); color:#FFFFFF; display:flex; align-items:center; justify-content:center; margin-inline:auto; margin-bottom:14px; box-shadow:0 0 30px rgba(0,242,254,0.45);">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3 style="color:#FFFFFF; font-size:1.3rem; margin-bottom:8px;" id="welcome-success-title">Welcome to TAVRICON!</h3>
+            <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6; margin-bottom:18px;" id="welcome-success-desc">
+              Thank you for connecting with us. Enjoy discovering our high-performance marketing engines.
+            </p>
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <a id="welcome-wa-fasttrack" href="https://wa.me/919799111507" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="display:none; width:100%;">
+                Fast-Track on WhatsApp &rarr;
+              </a>
+              <button type="button" id="welcome-continue-btn" class="btn btn-secondary btn-sm" style="width:100%;">
+                Explore Website Now
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(welcomeOverlay);
+    }
+
+    const welcomeCloseBtn = welcomeOverlay.querySelector('#welcome-modal-close');
+    const welcomeSkipBtn = welcomeOverlay.querySelector('#welcome-skip-btn');
+    const welcomeForm = welcomeOverlay.querySelector('#welcome-lead-form');
+    const welcomeFormWrapper = welcomeOverlay.querySelector('#welcome-form-wrapper');
+    const welcomeSuccessState = welcomeOverlay.querySelector('#welcome-success-state');
+    const welcomeSuccessTitle = welcomeOverlay.querySelector('#welcome-success-title');
+    const welcomeSuccessDesc = welcomeOverlay.querySelector('#welcome-success-desc');
+    const welcomeWaFasttrack = welcomeOverlay.querySelector('#welcome-wa-fasttrack');
+    const welcomeContinueBtn = welcomeOverlay.querySelector('#welcome-continue-btn');
 
     const openWelcomeModal = () => {
-      // Don't open if user already dismissed or interacted this session
-      try {
-        if (sessionStorage.getItem('tavricon_welcome_shown') === 'true') {
-          return;
-        }
-      } catch (e) {}
-
-      // If opening brand reveal overlay is currently active, wait until it finishes
+      // If brand reveal is currently animating on index.html, wait until it finishes
       const brandReveal = document.getElementById('brand-reveal');
       if (brandReveal && !brandReveal.classList.contains('hide-reveal') && brandReveal.style.display !== 'none') {
-        setTimeout(openWelcomeModal, 2000);
+        setTimeout(openWelcomeModal, 1500);
         return;
       }
 
       welcomeOverlay.classList.add('active');
       document.body.style.overflow = 'hidden';
 
-      // Play soft tactile sound if audio is active
       if (window.tavriconSound) {
-        window.tavriconSound.playClick(0.8);
+        window.tavriconSound.playClick(0.9);
       }
     };
 
     const closeWelcomeModal = () => {
       welcomeOverlay.classList.remove('active');
       document.body.style.overflow = '';
-      try {
-        sessionStorage.setItem('tavricon_welcome_shown', 'true');
-      } catch (e) {}
     };
 
-    // Trigger after 7 seconds (within user specified 5-10 second window)
-    const welcomeTimer = setTimeout(openWelcomeModal, 7000);
+    // Trigger reliably after 5 seconds (within 5-10 second requirement)
+    setTimeout(openWelcomeModal, 5000);
 
     if (welcomeCloseBtn) {
       welcomeCloseBtn.addEventListener('click', (e) => {
@@ -402,35 +498,31 @@ document.addEventListener('DOMContentLoaded', () => {
     if (welcomeForm) {
       welcomeForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        const nameVal = (document.getElementById('welcome-name')?.value || '').trim();
-        const emailVal = (document.getElementById('welcome-email')?.value || '').trim();
-        const phoneVal = (document.getElementById('welcome-phone')?.value || '').trim();
+        const nameVal = (welcomeOverlay.querySelector('#welcome-name')?.value || '').trim();
+        const phoneVal = (welcomeOverlay.querySelector('#welcome-phone')?.value || '').trim();
+        const emailVal = (welcomeOverlay.querySelector('#welcome-email')?.value || '').trim();
+        const workVal = (welcomeOverlay.querySelector('#welcome-work')?.value || '').trim();
 
-        const hasData = nameVal || emailVal || phoneVal;
+        const hasData = nameVal || phoneVal || emailVal || workVal;
 
         if (welcomeFormWrapper && welcomeSuccessState) {
           welcomeFormWrapper.style.display = 'none';
           welcomeSuccessState.style.display = 'block';
 
           if (nameVal) {
-            welcomeSuccessTitle.textContent = `Welcome, ${nameVal}!`;
-            welcomeSuccessDesc.textContent = `Thank you for introducing yourself. We're excited to have you explore TAVRICON's growth intelligence suite.`;
+            if (welcomeSuccessTitle) welcomeSuccessTitle.textContent = `Welcome, ${nameVal}!`;
+            if (welcomeSuccessDesc) welcomeSuccessDesc.textContent = `Thank you for connecting with TAVRICON. We're excited to learn more about your ${workVal || 'business'} goals.`;
           } else {
-            welcomeSuccessTitle.textContent = 'Welcome to TAVRICON!';
-            welcomeSuccessDesc.textContent = `Thank you for connecting with us. Enjoy discovering our high-performance marketing engines.`;
+            if (welcomeSuccessTitle) welcomeSuccessTitle.textContent = 'Welcome to TAVRICON!';
+            if (welcomeSuccessDesc) welcomeSuccessDesc.textContent = `Thank you for connecting with us. Enjoy discovering our high-performance marketing engines.`;
           }
 
           if (hasData && welcomeWaFasttrack) {
-            const encoded = encodeURIComponent(`Hi Aditya, I just visited TAVRICON.\nName: ${nameVal || 'Visitor'}\nEmail: ${emailVal || 'N/A'}\nPhone: ${phoneVal || 'N/A'}`);
+            const encoded = encodeURIComponent(`Hi Aditya, I just visited TAVRICON.\nName: ${nameVal || 'Visitor'}\nPhone: ${phoneVal || 'N/A'}\nGmail: ${emailVal || 'N/A'}\nWork: ${workVal || 'N/A'}`);
             welcomeWaFasttrack.href = `https://wa.me/919799111507?text=${encoded}`;
             welcomeWaFasttrack.style.display = 'inline-flex';
           }
 
-          try {
-            sessionStorage.setItem('tavricon_welcome_shown', 'true');
-          } catch (e) {}
-
-          // Auto-close smoothly after 3.5s
           setTimeout(() => {
             if (welcomeOverlay.classList.contains('active')) {
               closeWelcomeModal();
@@ -441,5 +533,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }
-  }
+  };
+
+  initWelcomeModal();
 });
