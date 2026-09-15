@@ -315,4 +315,131 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // --------------------------------------------------------------------------
+  // 12. WELCOME POPUP MODAL (Triggers 5-10s after opening, Optional)
+  // --------------------------------------------------------------------------
+  const welcomeOverlay = document.getElementById('welcome-modal-overlay');
+  if (welcomeOverlay) {
+    const welcomeCloseBtn = document.getElementById('welcome-modal-close');
+    const welcomeSkipBtn = document.getElementById('welcome-skip-btn');
+    const welcomeForm = document.getElementById('welcome-lead-form');
+    const welcomeFormWrapper = document.getElementById('welcome-form-wrapper');
+    const welcomeSuccessState = document.getElementById('welcome-success-state');
+    const welcomeSuccessTitle = document.getElementById('welcome-success-title');
+    const welcomeSuccessDesc = document.getElementById('welcome-success-desc');
+    const welcomeWaFasttrack = document.getElementById('welcome-wa-fasttrack');
+    const welcomeContinueBtn = document.getElementById('welcome-continue-btn');
+
+    const openWelcomeModal = () => {
+      // Don't open if user already dismissed or interacted this session
+      try {
+        if (sessionStorage.getItem('tavricon_welcome_shown') === 'true') {
+          return;
+        }
+      } catch (e) {}
+
+      // If opening brand reveal overlay is currently active, wait until it finishes
+      const brandReveal = document.getElementById('brand-reveal');
+      if (brandReveal && !brandReveal.classList.contains('hide-reveal') && brandReveal.style.display !== 'none') {
+        setTimeout(openWelcomeModal, 2000);
+        return;
+      }
+
+      welcomeOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+
+      // Play soft tactile sound if audio is active
+      if (window.tavriconSound) {
+        window.tavriconSound.playClick(0.8);
+      }
+    };
+
+    const closeWelcomeModal = () => {
+      welcomeOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+      try {
+        sessionStorage.setItem('tavricon_welcome_shown', 'true');
+      } catch (e) {}
+    };
+
+    // Trigger after 7 seconds (within user specified 5-10 second window)
+    const welcomeTimer = setTimeout(openWelcomeModal, 7000);
+
+    if (welcomeCloseBtn) {
+      welcomeCloseBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeWelcomeModal();
+      });
+    }
+
+    if (welcomeSkipBtn) {
+      welcomeSkipBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeWelcomeModal();
+      });
+    }
+
+    if (welcomeContinueBtn) {
+      welcomeContinueBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeWelcomeModal();
+      });
+    }
+
+    welcomeOverlay.addEventListener('click', (e) => {
+      if (e.target === welcomeOverlay) {
+        closeWelcomeModal();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && welcomeOverlay.classList.contains('active')) {
+        closeWelcomeModal();
+      }
+    });
+
+    if (welcomeForm) {
+      welcomeForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const nameVal = (document.getElementById('welcome-name')?.value || '').trim();
+        const emailVal = (document.getElementById('welcome-email')?.value || '').trim();
+        const phoneVal = (document.getElementById('welcome-phone')?.value || '').trim();
+
+        const hasData = nameVal || emailVal || phoneVal;
+
+        if (welcomeFormWrapper && welcomeSuccessState) {
+          welcomeFormWrapper.style.display = 'none';
+          welcomeSuccessState.style.display = 'block';
+
+          if (nameVal) {
+            welcomeSuccessTitle.textContent = `Welcome, ${nameVal}!`;
+            welcomeSuccessDesc.textContent = `Thank you for introducing yourself. We're excited to have you explore TAVRICON's growth intelligence suite.`;
+          } else {
+            welcomeSuccessTitle.textContent = 'Welcome to TAVRICON!';
+            welcomeSuccessDesc.textContent = `Thank you for connecting with us. Enjoy discovering our high-performance marketing engines.`;
+          }
+
+          if (hasData && welcomeWaFasttrack) {
+            const encoded = encodeURIComponent(`Hi Aditya, I just visited TAVRICON.\nName: ${nameVal || 'Visitor'}\nEmail: ${emailVal || 'N/A'}\nPhone: ${phoneVal || 'N/A'}`);
+            welcomeWaFasttrack.href = `https://wa.me/919799111507?text=${encoded}`;
+            welcomeWaFasttrack.style.display = 'inline-flex';
+          }
+
+          try {
+            sessionStorage.setItem('tavricon_welcome_shown', 'true');
+          } catch (e) {}
+
+          // Auto-close smoothly after 3.5s
+          setTimeout(() => {
+            if (welcomeOverlay.classList.contains('active')) {
+              closeWelcomeModal();
+            }
+          }, 3500);
+        } else {
+          closeWelcomeModal();
+        }
+      });
+    }
+  }
 });

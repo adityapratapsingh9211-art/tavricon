@@ -964,6 +964,64 @@
   background: rgba(0, 242, 254, 0.2);
 }
 
+/* Welcome Popup Modal */
+.welcome-modal-container {
+  max-width: 480px;
+  width: 100%;
+  border: 1px solid rgba(0, 242, 254, 0.35);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.85), 0 0 45px rgba(0, 242, 254, 0.22);
+  background: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.16), transparent 70%), var(--bg-surface-1);
+}
+
+.welcome-modal-header {
+  margin-bottom: var(--space-5);
+}
+
+.welcome-modal-title {
+  font-size: clamp(1.3rem, 2.8vw, 1.65rem);
+  color: #FFFFFF;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+.welcome-modal-subtitle {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.welcome-input-wrap {
+  position: relative;
+}
+
+.welcome-input-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--cyan-light);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-input-wrap .form-input {
+  padding-left: 44px;
+}
+
+@media (max-width: 480px) {
+  .welcome-modal-container {
+    padding: var(--space-5) var(--space-4);
+    max-width: calc(100vw - 32px);
+  }
+
+  .welcome-modal-title {
+    font-size: 1.25rem;
+  }
+}
+
 /* --------------------------------------------------------------------------
    11. RESPONSIVE BREAKPOINTS
    -------------------------------------------------------------------------- */
