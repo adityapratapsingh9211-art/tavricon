@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setupPillFilter('.services-filter-bar', '.service-item-card');
   setupPillFilter('.work-filter-bar', '.work-card');
-  setupPillFilter('.blog-filter-bar', '.blog-card');
+  setupPillFilter('.blog-filter-bar', '.blog-card, .featured-article-card');
 
   // --------------------------------------------------------------------------
   // 2. BLOG LIVE SEARCH
@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Attach modal trigger to Work "Deep Dive" buttons
   const workTriggers = document.querySelectorAll('.work-deep-dive-btn');
   workTriggers.forEach(btn => {
-    btn.addEventListener('click', (e) => {
+    const handleTrigger = (e) => {
       e.preventDefault();
       const card = btn.closest('.work-card');
       const title = card?.querySelector('.work-title')?.textContent || 'Case Study Deep Dive';
@@ -196,13 +196,18 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
 
       openGlobalModal(title, content);
+    };
+
+    btn.addEventListener('click', handleTrigger);
+    btn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') handleTrigger(e);
     });
   });
 
   // Attach modal trigger to Blog "Read Article" cards
   const blogTriggers = document.querySelectorAll('.blog-read-trigger');
   blogTriggers.forEach(btn => {
-    btn.addEventListener('click', (e) => {
+    const handleTrigger = (e) => {
       e.preventDefault();
       const card = btn.closest('.blog-card') || btn.closest('.featured-article-card');
       const title = card?.querySelector('.blog-card-title, .featured-title')?.textContent || 'Article Insight';
@@ -226,6 +231,11 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
 
       openGlobalModal(title, content);
+    };
+
+    btn.addEventListener('click', handleTrigger);
+    btn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') handleTrigger(e);
     });
   });
 });

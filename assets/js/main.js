@@ -303,4 +303,16 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // --------------------------------------------------------------------------
+  // 11. REPLAY BRAND REVEAL INTRO
+  // --------------------------------------------------------------------------
+  const replayBtn = document.querySelector('.replay-reveal-btn');
+  if (replayBtn) {
+    replayBtn.addEventListener('click', () => {
+      if (typeof window.replayBrandReveal === 'function') {
+        window.replayBrandReveal();
+      }
+    });
+  }
 });

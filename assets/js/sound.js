@@ -431,8 +431,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Connect ROAS ad spend slider
-  const spendSlider = document.getElementById('monthly-spend-slider');
+  // Connect ROAS ad spend slider (support sim-spend-slider and monthly-spend-slider)
+  const spendSlider = document.getElementById('sim-spend-slider') || document.getElementById('monthly-spend-slider');
   if (spendSlider) {
     spendSlider.addEventListener('input', () => {
       window.tavriconSound.playSliderTick();
@@ -440,8 +440,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Connect Strategy Mode buttons (Scale vs Margin)
-  const btnScale = document.getElementById('btn-scale-mode');
-  const btnMargin = document.getElementById('btn-margin-mode');
+  const btnScale = document.getElementById('mode-scale') || document.getElementById('btn-scale-mode');
+  const btnMargin = document.getElementById('mode-margin') || document.getElementById('btn-margin-mode');
   if (btnScale) {
     btnScale.addEventListener('click', () => {
       window.tavriconSound.playToggle(true);

@@ -8,6 +8,59 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 1. Interactive Form Validation & Submission
   if (contactForm) {
+    // Parse URL Parameters (from Growth Simulator or Services page)
+    const urlParams = new URLSearchParams(window.location.search);
+    const budgetParam = urlParams.get('budget');
+    const modeParam = urlParams.get('mode');
+    const serviceParam = urlParams.get('service');
+
+    // Auto-select service checkbox if passed
+    if (serviceParam) {
+      const serviceMap = {
+        'seo': 'SEO',
+        'ppc': 'PPC',
+        'meta': 'Meta Ads',
+        'google': 'Google Ads',
+        'email': 'Email',
+        'ai': 'AI Workflows'
+      };
+      const targetVal = serviceMap[serviceParam.toLowerCase()] || serviceParam;
+      const chk = contactForm.querySelector(`input[name="services"][value="${targetVal}"]`);
+      if (chk) {
+        chk.checked = true;
+      }
+    }
+
+    // Auto-select budget radio and pre-fill note if budget passed
+    if (budgetParam) {
+      const budgetNum = parseInt(budgetParam, 10);
+      const radios = contactForm.querySelectorAll('input[name="budget"]');
+      if (!isNaN(budgetNum) && radios.length >= 3) {
+        if (budgetNum < 150000) {
+          radios[0].checked = true;
+        } else if (budgetNum < 400000) {
+          radios[1].checked = true;
+        } else {
+          radios[2].checked = true;
+        }
+      }
+
+      // Pre-fill message textarea with simulator parameters
+      const msgArea = contactForm.querySelector('#contact-message');
+      if (msgArea && !msgArea.value) {
+        const modeLabel = modeParam === 'margin' ? 'Maximum Margin' : 'Aggressive Scale';
+        let formattedBudget = budgetParam;
+        if (!isNaN(budgetNum)) {
+          if (budgetNum >= 100000) {
+            formattedBudget = `₹${(budgetNum / 100000).toFixed(2)} Lakh / month`;
+          } else {
+            formattedBudget = `₹${budgetNum.toLocaleString('en-IN')} / month`;
+          }
+        }
+        msgArea.value = `[Simulator Lock-In] Strategy Mode: ${modeLabel} | Target Monthly Ad Capital: ${formattedBudget}.\nGoals: `;
+      }
+    }
+
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
