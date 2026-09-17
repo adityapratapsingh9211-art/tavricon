@@ -317,7 +317,8 @@ const initApp = () => {
   }
 
   // --------------------------------------------------------------------------
-  // 12. WELCOME POPUP MODAL (Triggers ONLY ONCE on home page opening)
+  // --------------------------------------------------------------------------
+  // 12. WELCOME POPUP MODAL (Triggers smoothly on home page opening)
   // --------------------------------------------------------------------------
   const initWelcomeModal = () => {
     // 1. Strict Page Gate: NEVER run on subpages (About, Founder, Services, Work, Blog, Contact, etc.)
@@ -341,14 +342,27 @@ const initApp = () => {
       return;
     }
 
-    // 3. Show ONLY ONCE: Check if already shown or dismissed
+    // Clean up any legacy localStorage / old session keys that permanently blocked the popup
     try {
-      if (localStorage.getItem('tavricon_welcome_dismissed') === 'true' || 
-          sessionStorage.getItem('tavricon_welcome_dismissed') === 'true' ||
-          sessionStorage.getItem('tavricon_welcome_shown_session') === 'true') {
-        return;
-      }
+      localStorage.removeItem('tavricon_welcome_dismissed');
+      localStorage.removeItem('tavricon_welcome_shown');
+      localStorage.removeItem('tavricon_welcome_shown_session');
+      sessionStorage.removeItem('tavricon_welcome_dismissed');
+      sessionStorage.removeItem('tavricon_welcome_shown_session');
     } catch (e) {}
+
+    // Check if user already explicitly closed or submitted the form in this current browsing session
+    const isForceTest = window.location.search.includes('popup') || 
+                        window.location.search.includes('welcome') || 
+                        window.location.hash === '#welcome';
+
+    if (!isForceTest) {
+      try {
+        if (sessionStorage.getItem('tavricon_popup_closed_v1') === 'true') {
+          return;
+        }
+      } catch (e) {}
+    }
 
     const welcomeCloseBtn = welcomeOverlay.querySelector('#welcome-modal-close');
     const welcomeSkipBtn = welcomeOverlay.querySelector('#welcome-skip-btn');
@@ -362,9 +376,7 @@ const initApp = () => {
 
     const markDismissed = () => {
       try {
-        localStorage.setItem('tavricon_welcome_dismissed', 'true');
-        sessionStorage.setItem('tavricon_welcome_dismissed', 'true');
-        sessionStorage.setItem('tavricon_welcome_shown_session', 'true');
+        sessionStorage.setItem('tavricon_popup_closed_v1', 'true');
       } catch (e) {}
     };
 
@@ -383,8 +395,6 @@ const initApp = () => {
       welcomeOverlay.style.zIndex = '999999';
       welcomeOverlay.classList.add('active');
       document.body.style.overflow = 'hidden';
-
-      markDismissed();
 
       if (window.tavriconSound) {
         window.tavriconSound.playClick(0.9);
@@ -409,8 +419,9 @@ const initApp = () => {
     window.openWelcomePopup = openWelcomeModal;
     window.closeWelcomePopup = closeWelcomeModal;
 
-    // Trigger reliably after 5.0 seconds once when opening the site
-    setTimeout(openWelcomeModal, 5000);
+    // Trigger reliably after 4.2 seconds when opening the site (or immediately if force test)
+    const triggerDelay = isForceTest ? 300 : 4200;
+    setTimeout(openWelcomeModal, triggerDelay);
 
     if (welcomeCloseBtn) {
       welcomeCloseBtn.addEventListener('click', (e) => {
