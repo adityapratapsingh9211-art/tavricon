@@ -1,4 +1,4 @@
-﻿User-agent: *
+User-agent: *
 Allow: /
 
-Sitemap: https://tavricon.in/sitemap.xml
+Sitemap: https://adityapratapsingh9211-art.github.io/tavricon/sitemap.xml

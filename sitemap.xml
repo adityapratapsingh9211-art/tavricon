@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
@@ -6,7 +6,7 @@
 
   <!-- 1. Home -->
   <url>
-    <loc>https://tavricon.in/</loc>
+    <loc>https://adityapratapsingh9211-art.github.io/tavricon/</loc>
     <lastmod>2026-09-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
@@ -14,7 +14,7 @@
 
   <!-- 2. Services -->
   <url>
-    <loc>https://tavricon.in/services.html</loc>
+    <loc>https://adityapratapsingh9211-art.github.io/tavricon/services.html</loc>
     <lastmod>2026-09-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
@@ -22,7 +22,7 @@
 
   <!-- 3. Work & Case Studies -->
   <url>
-    <loc>https://tavricon.in/work.html</loc>
+    <loc>https://adityapratapsingh9211-art.github.io/tavricon/work.html</loc>
     <lastmod>2026-09-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
@@ -30,7 +30,7 @@
 
   <!-- 4. About -->
   <url>
-    <loc>https://tavricon.in/about.html</loc>
+    <loc>https://adityapratapsingh9211-art.github.io/tavricon/about.html</loc>
     <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -38,7 +38,7 @@
 
   <!-- 5. Founder -->
   <url>
-    <loc>https://tavricon.in/founder.html</loc>
+    <loc>https://adityapratapsingh9211-art.github.io/tavricon/founder.html</loc>
     <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -46,7 +46,7 @@
 
   <!-- 6. Blog & Perspectives -->
   <url>
-    <loc>https://tavricon.in/blog.html</loc>
+    <loc>https://adityapratapsingh9211-art.github.io/tavricon/blog.html</loc>
     <lastmod>2026-09-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
@@ -54,7 +54,7 @@
 
   <!-- 7. Contact & Strategy Consultation -->
   <url>
-    <loc>https://tavricon.in/contact.html</loc>
+    <loc>https://adityapratapsingh9211-art.github.io/tavricon/contact.html</loc>
     <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -62,7 +62,7 @@
 
   <!-- 8. Privacy Policy -->
   <url>
-    <loc>https://tavricon.in/privacy.html</loc>
+    <loc>https://adityapratapsingh9211-art.github.io/tavricon/privacy.html</loc>
     <lastmod>2026-09-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.30</priority>
@@ -70,7 +70,7 @@
 
   <!-- 9. Terms & Conditions -->
   <url>
-    <loc>https://tavricon.in/terms.html</loc>
+    <loc>https://adityapratapsingh9211-art.github.io/tavricon/terms.html</loc>
     <lastmod>2026-09-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.30</priority>
