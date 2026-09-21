@@ -419,8 +419,8 @@ const initApp = () => {
     window.openWelcomePopup = openWelcomeModal;
     window.closeWelcomePopup = closeWelcomeModal;
 
-    // Trigger reliably after 4.2 seconds when opening the site (or immediately if force test)
-    const triggerDelay = isForceTest ? 300 : 4200;
+    // Trigger reliably after 7.5 seconds (7-8s window) when opening the site (or immediately if force test)
+    const triggerDelay = isForceTest ? 300 : 7500;
     setTimeout(openWelcomeModal, triggerDelay);
 
     if (welcomeCloseBtn) {
