@@ -1,0 +1,348 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>502 — Bad Gateway | TAVRICON Upstream Desync</title>
+  <meta name="description" content="HTTP 502 Bad Gateway. Upstream server handshake timeout or gateway proxy latency. Play Quantum ROAS Runner while we re-establish connection.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://adityapratapsingh9211-art.github.io/tavricon/502.html">
+
+  <!-- Open Graph -->
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="502 — Bad Gateway | TAVRICON">
+  <meta property="og:description" content="HTTP 502 Bad Gateway. Upstream server handshake timeout or gateway proxy latency. Play Quantum ROAS Runner while we re-establish connection.">
+  <meta property="og:url" content="https://adityapratapsingh9211-art.github.io/tavricon/502.html">
+  <meta property="og:site_name" content="TAVRICON">
+  <meta property="og:image" content="https://adityapratapsingh9211-art.github.io/tavricon/assets/images/logo/tavricon-hero-logo.png">
+
+  <!-- Favicon & Icons -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/images/logo/tavricon-app-icon.png">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/variables.css?v=3.3">
+  <link rel="stylesheet" href="assets/css/base.css?v=3.3">
+  <link rel="stylesheet" href="assets/css/components.css?v=3.3">
+  <link rel="stylesheet" href="assets/css/animations.css?v=3.3">
+  <link rel="stylesheet" href="assets/css/pages.css?v=5.4">
+</head>
+<body>
+
+  <!-- GLOBAL HEADER -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="brand-lockup" aria-label="TAVRICON Home">
+        <svg class="brand-logo-svg" viewBox="0 0 100 100" fill="none">
+          <defs>
+            <linearGradient id="navCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FFFFFF" />
+              <stop offset="30%" stop-color="#00F2FE" />
+              <stop offset="70%" stop-color="#38BDF8" />
+              <stop offset="100%" stop-color="#2563EB" />
+            </linearGradient>
+            <linearGradient id="navRoyal" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#60A5FA" />
+              <stop offset="60%" stop-color="#2563EB" />
+              <stop offset="100%" stop-color="#1D4ED8" />
+            </linearGradient>
+            <linearGradient id="navVelvet" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#334155" />
+              <stop offset="100%" stop-color="#0F172A" />
+            </linearGradient>
+          </defs>
+          <path d="M12 36 L30 18 L76 18 L64 36 Z" fill="url(#navCyan)" />
+          <path d="M68 18 L86 6 L88 18 L72 36 Z" fill="url(#navRoyal)" />
+          <path d="M26 62 L48 44 L48 90 L34 90 L34 78 L26 84 Z" fill="url(#navVelvet)" />
+          <path d="M52 56 L64 48 L64 86 L52 92 Z" fill="url(#navRoyal)" />
+          <path d="M68 44 L80 34 L80 72 L68 80 Z" fill="url(#navCyan)" />
+        </svg>
+        <div class="brand-text-group">
+          <span class="brand-title">TAVRICON</span>
+          <span class="brand-tagline">GROWTH • PERFORMANCE</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" role="navigation" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="founder.html" class="nav-link">Founder</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="work.html" class="nav-link">Work</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-cta-wrap">
+        <button class="sound-toggle-btn" aria-label="Toggle Sound Effects" title="Sound Effects: ON (Click to Mute)">
+          <span class="sound-wave-bars">
+            <span class="bar bar-1"></span>
+            <span class="bar bar-2"></span>
+            <span class="bar bar-3"></span>
+          </span>
+          <span class="sound-status-text">SOUND ON</span>
+        </button>
+        <a href="contact.html" class="btn btn-primary btn-sm header-cta-desktop">Let's Talk</a>
+        <button class="mobile-toggle-btn" aria-label="Toggle Mobile Menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div class="drawer-backdrop" aria-hidden="true"></div>
+  <aside class="mobile-drawer" role="dialog" aria-label="Mobile Navigation">
+    <div class="drawer-header">
+      <div class="brand-text-group">
+        <span class="brand-title">TAVRICON</span>
+        <span class="brand-tagline">EST. 2024</span>
+      </div>
+      <button class="drawer-close-btn" aria-label="Close Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <ul class="drawer-nav-list">
+      <li><a href="index.html" class="drawer-nav-link"><span>Home</span> <span>&rarr;</span></a></li>
+      <li><a href="about.html" class="drawer-nav-link"><span>About</span> <span>&rarr;</span></a></li>
+      <li><a href="founder.html" class="drawer-nav-link"><span>Founder</span> <span>&rarr;</span></a></li>
+      <li><a href="services.html" class="drawer-nav-link"><span>Services</span> <span>&rarr;</span></a></li>
+      <li><a href="work.html" class="drawer-nav-link"><span>Work</span> <span>&rarr;</span></a></li>
+      <li><a href="blog.html" class="drawer-nav-link"><span>Blog</span> <span>&rarr;</span></a></li>
+      <li><a href="contact.html" class="drawer-nav-link"><span>Contact</span> <span>&rarr;</span></a></li>
+    </ul>
+    <div style="margin-top:auto;">
+      <a href="contact.html" class="btn btn-primary" style="width:100%; margin-bottom:12px;">Let's Talk</a>
+      <p style="font-size:0.75rem; color:var(--text-faint); text-align:center;">+91 97991 11507 • Jaipur, India</p>
+    </div>
+  </aside>
+
+  <!-- MAIN ERROR PAGE CONTENT -->
+  <main id="main-content">
+    <section class="error-hero-section">
+      <div class="container">
+        <div class="error-layout fade-up">
+          
+          <!-- 3D Floating Concierge Beacon Hologram -->
+          <div class="error-visual-wrap">
+            <div class="error-orbital-ring"></div>
+            <img src="assets/images/showcase/hook-concierge-dispatch-beacon.png" alt="Gateway Proxy Beacon" class="error-node-png">
+          </div>
+
+          <!-- Kinetic Chromatic Glitch Title -->
+          <div class="glitch-num-wrap">
+            <h1 class="glitch-num" data-text="502">502</h1>
+          </div>
+
+          <h2 class="error-title">Bad Gateway // Upstream Proxy Desync</h2>
+          <p class="error-lead">
+            The proxy node received an invalid handshake from the upstream server cluster. Our automated routing engines are re-establishing the edge connection right now.
+          </p>
+
+          <!-- Interactive HTTP Status Code Switcher -->
+          <div class="status-switcher-wrap">
+            <div class="status-switcher-label">Explore HTTP Status Matrix:</div>
+            <div class="status-switcher-tabs" role="tablist">
+              <a href="404.html" class="status-tab" role="tab" aria-selected="false">
+                <span>404 Not Found</span>
+              </a>
+              <a href="502.html" class="status-tab active" role="tab" aria-selected="true">
+                <span class="tab-dot"></span>
+                <span>502 Bad Gateway</span>
+              </a>
+              <a href="500.html" class="status-tab" role="tab" aria-selected="false">
+                <span>500 Core Overload</span>
+              </a>
+              <a href="contact.html" class="status-tab" role="tab" aria-selected="false">
+                <span>503 Maintenance Mode</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Cyber Terminal Diagnostic Window -->
+          <div class="terminal-window">
+            <div class="terminal-header">
+              <span class="terminal-dot dot-red"></span>
+              <span class="terminal-dot dot-yellow"></span>
+              <span class="terminal-dot dot-green"></span>
+              <span class="terminal-title">upstream-handshake-monitor.sh</span>
+            </div>
+            <div class="terminal-body">
+              <span class="terminal-line"><span class="terminal-cyan">[GATEWAY]</span> EDGE_NODE: CLOUDFLARE // GITHUB_PAGES_CDN</span>
+              <span class="terminal-line"><span class="terminal-red">[STATUS]</span> 502_BAD_GATEWAY: UPSTREAM_RESPONSE_EMPTY</span>
+              <span class="terminal-line"><span class="terminal-amber">[DIAGNOSTIC]</span> CHECKING LOAD BALANCER &amp; SSL HANDSHAKE...</span>
+              <span class="terminal-line"><span class="terminal-green">[FAILOVER]</span> CLIENT ENGINE OPERATIONAL. LAUNCH ARCADE RECOVERY...<span class="cursor-blink"></span></span>
+            </div>
+          </div>
+
+          <!-- EMBEDDED ARCADE MINI-GAME: QUANTUM ROAS RUNNER -->
+          <div class="arcade-section">
+            <div class="arcade-cabinet card-beam">
+              <div class="arcade-header">
+                <div class="arcade-marquee">
+                  <span class="arcade-badge">ARCADE MODE</span>
+                  <span class="arcade-title">QUANTUM ROAS RUNNER</span>
+                </div>
+                <div class="arcade-scoreboard">
+                  <div class="score-pill">SCORE: <span id="game-current-score">0 ROAS</span></div>
+                  <div class="score-pill">HIGH: <span id="game-high-score">0 ROAS</span></div>
+                </div>
+              </div>
+
+              <!-- CRT Screen Bezel & Canvas -->
+              <div class="arcade-screen-frame">
+                <canvas id="glitch-game-canvas" width="720" height="320"></canvas>
+                <div class="crt-scanlines"></div>
+              </div>
+
+              <!-- Controls & Instructions -->
+              <div class="arcade-controls-row">
+                <span class="arcade-instruction-text">
+                  ⌨️ DESKTOP: <strong>[SPACE / &uarr;]</strong> JUMP &bull; <strong>[&darr;]</strong> DUCK &bull; <strong>[R]</strong> RESTART
+                </span>
+                
+                <!-- Mobile Touch Buttons -->
+                <div class="arcade-mobile-touch-pad">
+                  <button type="button" class="touch-btn" id="game-jump-btn">&uarr; JUMP</button>
+                  <button type="button" class="touch-btn" id="game-slide-btn">&darr; DUCK</button>
+                </div>
+              </div>
+
+              <!-- Secret 500+ Perk Banner -->
+              <div class="game-perk-banner" id="game-perk-banner" style="display:none;">
+                <div class="perk-text">
+                  🎉 <strong>500+ ROAS UNLOCKED:</strong> Secret Growth Perk Activated! Receive an upgraded Tier-1 Discovery Audit on your proposal.
+                </div>
+                <a href="contact.html?perk=500_roas_runner" class="btn btn-cyan btn-sm">Claim Perk &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Emergency Rescue Actions Grid -->
+          <div class="rescue-actions-container">
+            <h3 class="rescue-section-heading">
+              <span>Emergency Navigation Protocols</span>
+            </h3>
+            <div class="rescue-grid">
+              <a href="index.html" class="rescue-card">
+                <span class="rescue-icon">&uarr;</span>
+                <span class="rescue-title">Return Home</span>
+                <span class="rescue-desc">Re-align with our central operational nexus.</span>
+              </a>
+              <a href="index.html#growth-simulator" class="rescue-card">
+                <span class="rescue-icon">&bull;</span>
+                <span class="rescue-title">ROAS Simulator</span>
+                <span class="rescue-desc">Simulate revenue targets and marketing yield.</span>
+              </a>
+              <a href="services.html" class="rescue-card">
+                <span class="rescue-icon">&#9881;</span>
+                <span class="rescue-title">Core Services</span>
+                <span class="rescue-desc">Explore our 8 high-velocity growth engines.</span>
+              </a>
+              <a href="https://wa.me/919799111507?text=Hi%20Aditya,%20I%20hit%20a%20502%20Bad%20Gateway%20on%20TAVRICON." target="_blank" rel="noopener" class="rescue-card">
+                <span class="rescue-icon">&#9993;</span>
+                <span class="rescue-title">Live Dispatch</span>
+                <span class="rescue-desc">Direct WhatsApp bridge to Aditya Singh.</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- GLOBAL FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Brand Summary Column -->
+        <div class="footer-brand-col">
+          <a href="index.html" class="brand-lockup" aria-label="TAVRICON Home" style="margin-bottom:16px;">
+            <svg class="brand-logo-svg" viewBox="0 0 100 100" fill="none">
+              <path d="M12 36 L30 18 L76 18 L64 36 Z" fill="#00F2FE" />
+              <path d="M68 18 L86 6 L88 18 L72 36 Z" fill="#2563EB" />
+              <path d="M26 62 L48 44 L48 90 L34 90 L34 78 L26 84 Z" fill="#334155" />
+              <path d="M52 56 L64 48 L64 86 L52 92 Z" fill="#2563EB" />
+              <path d="M68 44 L80 34 L80 72 L68 80 Z" fill="#00F2FE" />
+            </svg>
+            <div class="brand-text-group">
+              <span class="brand-title">TAVRICON</span>
+              <span class="brand-tagline">EST. 2024</span>
+            </div>
+          </a>
+          <p class="footer-bio">
+            GROWTH. PERFORMANCE. INTELLIGENCE. An elite boutique digital marketing agency helping ambitious global and Indian businesses scale revenue.
+          </p>
+        </div>
+
+        <!-- Navigation Links Column -->
+        <div>
+          <h3 class="footer-col-title">Navigation</h3>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About TAVRICON</a></li>
+            <li><a href="founder.html" class="footer-link">Founder Journey</a></li>
+            <li><a href="services.html" class="footer-link">Core Services</a></li>
+            <li><a href="work.html" class="footer-link">Work &amp; Case Studies</a></li>
+            <li><a href="blog.html" class="footer-link">Insights &amp; Blog</a></li>
+            <li><a href="contact.html" class="footer-link">Contact &amp; Proposals</a></li>
+          </ul>
+        </div>
+
+        <!-- Capabilities Column -->
+        <div>
+          <h3 class="footer-col-title">Capabilities</h3>
+          <ul class="footer-links">
+            <li><a href="services.html#seo" class="footer-link">SEO Optimization</a></li>
+            <li><a href="services.html#ppc" class="footer-link">Performance PPC</a></li>
+            <li><a href="services.html#meta-ads" class="footer-link">Meta Ads (IG &amp; FB)</a></li>
+            <li><a href="services.html#google-ads" class="footer-link">Google Performance Max</a></li>
+            <li><a href="services.html#smm" class="footer-link">Social Media Marketing</a></li>
+            <li><a href="services.html#content" class="footer-link">Content Storytelling</a></li>
+            <li><a href="services.html#email" class="footer-link">Email Automation</a></li>
+            <li><a href="services.html#ai" class="footer-link">AI Growth Workflows</a></li>
+          </ul>
+        </div>
+
+        <!-- Direct Contact Column -->
+        <div>
+          <h3 class="footer-col-title">Direct Connect</h3>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-primary)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div>
+              <span style="display:block; font-size:0.75rem; color:var(--text-faint);">Phone / WhatsApp:</span>
+              <a href="tel:+919799111507" style="color:#FFFFFF; font-weight:600;">+91 97991 11507</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-primary)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <div>
+              <span style="display:block; font-size:0.75rem; color:var(--text-faint);">Primary Email:</span>
+              <a href="mailto:adityapratapsingh9211@gmail.com" style="color:#FFFFFF; font-weight:500; font-size:0.85rem;">adityapratapsingh9211@gmail.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 TAVRICON. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="privacy.html" class="footer-link">Privacy Policy</a>
+          <a href="terms.html" class="footer-link">Terms &amp; Conditions</a>
+          <a href="404.html" class="footer-link">System Status</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/sound.js?v=3.4"></script>
+  <script src="assets/js/main.js?v=6.0"></script>
+  <script src="assets/js/glitch-game.js?v=1.0"></script>
+</body>
+</html>

@@ -1335,3 +1335,541 @@
     padding: var(--space-5);
   }
 }
+
+/* ==========================================================================
+   HTTP STATUS ERROR PAGES (404, 502, 500) & QUANTUM ARCADE STYLES
+   ========================================================================== */
+
+.error-hero-section {
+  position: relative;
+  min-height: calc(100vh - 80px);
+  padding: clamp(60px, 8vw, 110px) 0 clamp(60px, 8vw, 100px);
+  background: radial-gradient(circle at 50% 20%, rgba(37, 99, 235, 0.16) 0%, transparent 60%),
+              radial-gradient(circle at 80% 60%, rgba(0, 242, 254, 0.08) 0%, transparent 50%),
+              var(--bg-void);
+  overflow: hidden;
+}
+
+.error-hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(0, 242, 254, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 242, 254, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(circle at 50% 40%, black, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle at 50% 40%, black, transparent 80%);
+  pointer-events: none;
+}
+
+.error-layout {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Floating 3D Quantum Hologram */
+.error-visual-wrap {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-node-png {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: floatingCube 4.2s ease-in-out infinite, glitchFloat 3s steps(2) infinite;
+  filter: drop-shadow(0 16px 36px rgba(0, 242, 254, 0.75)) drop-shadow(0 0 24px rgba(37, 99, 235, 0.6));
+}
+
+.error-orbital-ring {
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  border: 1.5px dashed rgba(0, 242, 254, 0.45);
+  border-radius: 50%;
+  animation: rotateGlow 14s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes glitchFloat {
+  0%, 100% { transform: translateY(0); }
+  20% { transform: translateY(-4px) skewX(1deg); }
+  40% { transform: translateY(3px) skewX(-1deg); }
+  60% { transform: translateY(-2px); }
+  80% { transform: translateY(1px); }
+}
+
+/* Chromatic Aberration Glitch Numbers */
+.glitch-num-wrap {
+  position: relative;
+  display: inline-block;
+  line-height: 0.9;
+  margin-bottom: 12px;
+}
+
+.glitch-num {
+  font-family: var(--font-display);
+  font-size: clamp(5.5rem, 15vw, 11rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: #FFFFFF;
+  position: relative;
+  text-shadow: 
+    0 0 25px rgba(0, 242, 254, 0.8),
+    0 0 50px rgba(37, 99, 235, 0.5);
+  animation: glitchChromatic 2.6s infinite;
+}
+
+.glitch-num::before,
+.glitch-num::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch-num::before {
+  left: -3px;
+  text-shadow: 2px 0 #00F2FE;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  animation: glitchTop 3.2s infinite;
+}
+
+.glitch-num::after {
+  left: 3px;
+  text-shadow: -2px 0 #EC4899;
+  clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+  animation: glitchBottom 2.8s infinite;
+}
+
+@keyframes glitchChromatic {
+  0%, 90%, 100% { transform: translate(0, 0); }
+  92% { transform: translate(-3px, 1px); }
+  94% { transform: translate(3px, -1px); }
+  96% { transform: translate(-2px, -2px); }
+  98% { transform: translate(2px, 1px); }
+}
+
+@keyframes glitchTop {
+  0%, 85%, 100% { transform: translate(0, 0); opacity: 0.85; }
+  87% { transform: translate(-4px, -2px); opacity: 1; }
+  91% { transform: translate(4px, 1px); opacity: 0.9; }
+  95% { transform: translate(-2px, 0); opacity: 0.8; }
+}
+
+@keyframes glitchBottom {
+  0%, 85%, 100% { transform: translate(0, 0); opacity: 0.85; }
+  88% { transform: translate(4px, 2px); opacity: 1; }
+  92% { transform: translate(-3px, -1px); opacity: 0.9; }
+  96% { transform: translate(2px, 0); opacity: 0.8; }
+}
+
+.error-title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+}
+
+.error-lead {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--text-secondary);
+  max-width: 640px;
+  margin: 0 auto 28px;
+  line-height: 1.6;
+}
+
+/* Interactive HTTP Status Code Switcher */
+.status-switcher-wrap {
+  margin-bottom: 34px;
+}
+
+.status-switcher-label {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--cyan-light);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+
+.status-switcher-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.status-tab {
+  background: rgba(7, 16, 38, 0.7);
+  border: 1px solid rgba(0, 242, 254, 0.2);
+  border-radius: 9999px;
+  padding: 6px 16px;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-family: var(--font-mono);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-tab:hover {
+  background: rgba(37, 99, 235, 0.25);
+  border-color: var(--cyan-primary);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 242, 254, 0.35);
+}
+
+.status-tab.active {
+  background: linear-gradient(135deg, rgba(0, 242, 254, 0.25), rgba(37, 99, 235, 0.45));
+  border-color: var(--cyan-primary);
+  color: #FFFFFF;
+  font-weight: 700;
+  box-shadow: 0 0 18px rgba(0, 242, 254, 0.5);
+}
+
+.status-tab .tab-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--cyan-primary);
+}
+
+/* Cyber Terminal Diagnostics Window */
+.terminal-window {
+  width: 100%;
+  max-width: 720px;
+  background: rgba(3, 7, 18, 0.88);
+  border: 1px solid rgba(0, 242, 254, 0.28);
+  border-radius: 12px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 25px rgba(37, 99, 235, 0.2);
+  overflow: hidden;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.terminal-header {
+  background: rgba(7, 14, 34, 0.95);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid rgba(0, 242, 254, 0.15);
+}
+
+.terminal-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+.dot-red { background: #EF4444; }
+.dot-yellow { background: #F59E0B; }
+.dot-green { background: #10B981; }
+
+.terminal-title {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-faint);
+  letter-spacing: 0.05em;
+}
+
+.terminal-body {
+  padding: 18px 22px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: #94A3B8;
+}
+
+.terminal-line {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.terminal-cyan { color: #00F2FE; font-weight: 600; }
+.terminal-green { color: #10B981; font-weight: 600; }
+.terminal-amber { color: #F59E0B; font-weight: 600; }
+.terminal-red { color: #EF4444; font-weight: 600; }
+
+.cursor-blink {
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  background: #00F2FE;
+  margin-left: 4px;
+  vertical-align: middle;
+  animation: blink 0.9s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ==========================================================================
+   ARCADE CABINET MINI-GAME WRAPPER
+   ========================================================================== */
+
+.arcade-section {
+  width: 100%;
+  max-width: 740px;
+  margin: 10px auto 44px;
+}
+
+.arcade-cabinet {
+  position: relative;
+  background: #020617;
+  border: 2px solid rgba(0, 242, 254, 0.4);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85),
+              0 0 40px rgba(0, 242, 254, 0.25),
+              inset 0 0 30px rgba(37, 99, 235, 0.25);
+  overflow: hidden;
+}
+
+.arcade-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(0, 242, 254, 0.2);
+}
+
+.arcade-marquee {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.arcade-badge {
+  background: linear-gradient(135deg, #00F2FE, #2563EB);
+  color: #030712;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.06em;
+}
+
+.arcade-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 0.04em;
+}
+
+.arcade-scoreboard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+}
+
+.score-pill {
+  background: rgba(7, 16, 38, 0.85);
+  border: 1px solid rgba(0, 242, 254, 0.3);
+  padding: 4px 10px;
+  border-radius: 6px;
+  color: #FFFFFF;
+}
+
+.score-pill span {
+  color: var(--cyan-primary);
+  font-weight: 700;
+}
+
+/* CRT Screen Frame & Canvas */
+.arcade-screen-frame {
+  position: relative;
+  background: #000000;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  box-shadow: inset 0 0 24px rgba(0, 242, 254, 0.15);
+}
+
+#glitch-game-canvas {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 720 / 320;
+  display: block;
+  cursor: pointer;
+}
+
+.crt-scanlines {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+  background-size: 100% 4px;
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+/* Mobile Game Controls */
+.arcade-controls-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+  gap: 12px;
+}
+
+.arcade-instruction-text {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-faint);
+}
+
+.arcade-mobile-touch-pad {
+  display: none;
+  gap: 10px;
+}
+
+.touch-btn {
+  background: rgba(7, 16, 38, 0.85);
+  border: 1.5px solid var(--cyan-primary);
+  color: #FFFFFF;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  box-shadow: 0 4px 14px rgba(0, 242, 254, 0.25);
+}
+
+.touch-btn:active {
+  background: var(--cyan-primary);
+  color: #030712;
+  transform: scale(0.95);
+}
+
+/* Easter Egg Perk Banner */
+.game-perk-banner {
+  margin-top: 14px;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.18), rgba(0, 242, 254, 0.15));
+  border: 1.5px solid #10B981;
+  border-radius: 8px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  animation: pulseNeon 2s infinite;
+}
+
+.perk-text {
+  font-size: 0.85rem;
+  color: #E2E8F0;
+}
+
+.perk-text strong {
+  color: #34D399;
+}
+
+/* Emergency Rescue Actions Grid */
+.rescue-actions-container {
+  width: 100%;
+  max-width: 740px;
+  margin: 0 auto;
+}
+
+.rescue-section-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.rescue-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+}
+
+.rescue-card {
+  background: rgba(7, 14, 34, 0.7);
+  border: 1px solid rgba(0, 242, 254, 0.2);
+  border-radius: 12px;
+  padding: 18px 16px;
+  text-decoration: none;
+  text-align: left;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rescue-card:hover {
+  background: rgba(15, 23, 42, 0.9);
+  border-color: var(--cyan-primary);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 242, 254, 0.25);
+}
+
+.rescue-icon {
+  font-size: 1.5rem;
+  margin-bottom: 2px;
+}
+
+.rescue-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.rescue-desc {
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .arcade-controls-row {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .arcade-mobile-touch-pad {
+    display: flex;
+    justify-content: center;
+  }
+
+  .arcade-scoreboard {
+    gap: 8px;
+  }
+}
+
