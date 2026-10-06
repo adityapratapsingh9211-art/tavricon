@@ -122,6 +122,17 @@ document.addEventListener('DOMContentLoaded', () => {
         formSuccessMsg.style.display = 'block';
         formSuccessMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
+        // Meta Pixel Lead tracking
+        if (typeof window.fbq === 'function') {
+          try {
+            window.fbq('track', 'Lead', {
+              content_name: 'Strategic Growth Inquiry',
+              value: formData.budget,
+              currency: 'INR'
+            });
+          } catch (e) {}
+        }
+
         // Update WhatsApp button in confirmation with pre-filled message
         const waBtn = formSuccessMsg.querySelector('#confirm-whatsapp-btn');
         if (waBtn) {

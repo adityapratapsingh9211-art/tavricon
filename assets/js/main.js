@@ -262,6 +262,15 @@ const initApp = () => {
     if (simLockBtn) {
       simLockBtn.addEventListener('click', () => {
         const spend = simSpendSlider.value;
+        if (typeof window.fbq === 'function') {
+          try {
+            window.fbq('track', 'InitiateCheckout', {
+              content_name: 'ROAS Strategy Lock-In',
+              value: spend,
+              currency: 'INR'
+            });
+          } catch (e) {}
+        }
         window.location.href = `contact.html?budget=${spend}&mode=${currentMode}`;
       });
     }
@@ -471,6 +480,16 @@ const initApp = () => {
           welcomeFormWrapper.style.display = 'none';
           welcomeSuccessState.style.display = 'block';
 
+          // Meta Pixel Lead tracking for Welcome Modal
+          if (typeof window.fbq === 'function') {
+            try {
+              window.fbq('track', 'Lead', {
+                content_name: 'Welcome Modal Quick Connect',
+                content_category: workVal || 'General Inquiry'
+              });
+            } catch (e) {}
+          }
+
           if (nameVal) {
             if (welcomeSuccessTitle) welcomeSuccessTitle.textContent = `Welcome, ${nameVal}!`;
             if (welcomeSuccessDesc) welcomeSuccessDesc.textContent = `Thank you for connecting with TAVRICON. We're excited to learn more about your ${workVal || 'business'} goals.`;
@@ -498,6 +517,18 @@ const initApp = () => {
   };
 
   initWelcomeModal();
+
+  // 12. Meta Pixel Contact Tracking for WhatsApp Links
+  document.addEventListener('click', (e) => {
+    const waLink = e.target.closest('a[href*="wa.me"]');
+    if (waLink && typeof window.fbq === 'function') {
+      try {
+        window.fbq('track', 'Contact', {
+          content_name: 'WhatsApp Direct Chat'
+        });
+      } catch (err) {}
+    }
+  });
 };
 
 if (document.readyState === 'loading') {
