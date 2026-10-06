@@ -14,10 +14,13 @@
       if (!this.canvas) return;
 
       this.ctx = this.canvas.getContext('2d');
-      this.width = 720;
-      this.height = 320;
-      this.canvas.width = this.width;
-      this.canvas.height = this.height;
+      this.logicalWidth = 720;
+      this.logicalHeight = 320;
+      this.width = this.logicalWidth;
+      this.height = this.logicalHeight;
+      this.dpr = Math.min(window.devicePixelRatio || 1, 2);
+      this.canvas.width = this.logicalWidth * this.dpr;
+      this.canvas.height = this.logicalHeight * this.dpr;
 
       // Audio engine reference or local synth
       this.audioCtx = null;
@@ -201,6 +204,28 @@
           this.handleDuck(false);
         });
         slideBtn.addEventListener('pointerleave', () => this.handleDuck(false));
+      }
+
+      // Expand / Theater Mode button
+      const expandBtn = document.getElementById('game-expand-btn');
+      const cabinet = document.querySelector('.arcade-cabinet');
+      if (expandBtn && cabinet) {
+        expandBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          cabinet.classList.toggle('arcade-theater-mode');
+          const isTheater = cabinet.classList.contains('arcade-theater-mode');
+          expandBtn.innerHTML = isTheater 
+            ? '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 14h6v6M20 10h-6V4M14 10l7-7M10 14l-7 7"/></svg> <span class="expand-label">EXIT</span>'
+            : '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg> <span class="expand-label">THEATER</span>';
+          this.initAudio();
+        });
+
+        window.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && cabinet.classList.contains('arcade-theater-mode')) {
+            cabinet.classList.remove('arcade-theater-mode');
+            expandBtn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg> <span class="expand-label">THEATER</span>';
+          }
+        });
       }
     }
 
@@ -508,6 +533,8 @@
 
     render() {
       const ctx = this.ctx;
+      ctx.save();
+      ctx.scale(this.dpr, this.dpr);
       ctx.clearRect(0, 0, this.width, this.height);
 
       // 1. Deep Space Cyber Grid Background
@@ -778,6 +805,7 @@
         }
         ctx.restore();
       }
+      ctx.restore();
     }
 
     loop(timestamp) {

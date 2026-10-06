@@ -1370,7 +1370,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-width: 900px;
+  max-width: 1160px;
   margin: 0 auto;
 }
 
@@ -1632,70 +1632,76 @@
 
 .arcade-section {
   width: 100%;
-  max-width: 740px;
-  margin: 10px auto 44px;
+  max-width: 1080px;
+  margin: 16px auto 48px;
+  transition: max-width 0.35s ease;
 }
 
 .arcade-cabinet {
   position: relative;
   background: #020617;
-  border: 2px solid rgba(0, 242, 254, 0.4);
-  border-radius: 16px;
-  padding: 16px;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85),
-              0 0 40px rgba(0, 242, 254, 0.25),
-              inset 0 0 30px rgba(37, 99, 235, 0.25);
+  border: 2px solid rgba(0, 242, 254, 0.45);
+  border-radius: 20px;
+  padding: 22px 24px 24px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9),
+              0 0 50px rgba(0, 242, 254, 0.28),
+              inset 0 0 35px rgba(37, 99, 235, 0.25);
   overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .arcade-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 12px;
-  margin-bottom: 12px;
+  padding-bottom: 14px;
+  margin-bottom: 14px;
   border-bottom: 1px solid rgba(0, 242, 254, 0.2);
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .arcade-marquee {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .arcade-badge {
   background: linear-gradient(135deg, #00F2FE, #2563EB);
   color: #030712;
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.76rem;
   font-weight: 800;
-  padding: 3px 8px;
-  border-radius: 4px;
+  padding: 4px 10px;
+  border-radius: 5px;
   letter-spacing: 0.06em;
 }
 
 .arcade-title {
   font-family: var(--font-display);
-  font-size: 0.95rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: #FFFFFF;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
 }
 
 .arcade-scoreboard {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.82rem;
+  flex-wrap: wrap;
 }
 
 .score-pill {
   background: rgba(7, 16, 38, 0.85);
   border: 1px solid rgba(0, 242, 254, 0.3);
-  padding: 4px 10px;
-  border-radius: 6px;
+  padding: 6px 14px;
+  border-radius: 7px;
   color: #FFFFFF;
+  font-size: 0.82rem;
 }
 
 .score-pill span {
@@ -1703,14 +1709,39 @@
   font-weight: 700;
 }
 
+.arcade-expand-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0, 242, 254, 0.12);
+  border: 1px solid rgba(0, 242, 254, 0.45);
+  color: var(--cyan-light);
+  padding: 6px 14px;
+  border-radius: 7px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.arcade-expand-btn:hover {
+  background: var(--cyan-primary);
+  color: #020617;
+  border-color: var(--cyan-primary);
+  box-shadow: 0 0 16px rgba(0, 242, 254, 0.5);
+  transform: translateY(-1px);
+}
+
 /* CRT Screen Frame & Canvas */
 .arcade-screen-frame {
   position: relative;
   background: #000000;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
-  border: 1px solid rgba(56, 189, 248, 0.3);
-  box-shadow: inset 0 0 24px rgba(0, 242, 254, 0.15);
+  border: 1.5px solid rgba(56, 189, 248, 0.35);
+  box-shadow: inset 0 0 32px rgba(0, 242, 254, 0.18), 0 10px 30px rgba(0, 0, 0, 0.7);
 }
 
 #glitch-game-canvas {
@@ -1728,6 +1759,37 @@
   background-size: 100% 4px;
   pointer-events: none;
   opacity: 0.55;
+}
+
+/* Theater / Fullscreen Overlay Mode */
+.arcade-cabinet.arcade-theater-mode {
+  position: fixed;
+  inset: 16px;
+  z-index: 999999;
+  background: #020617;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 0 100vmax rgba(2, 6, 23, 0.95), 0 0 80px rgba(0, 242, 254, 0.4);
+  border-radius: 16px;
+  border-color: var(--cyan-primary);
+}
+
+.arcade-cabinet.arcade-theater-mode .arcade-screen-frame {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+}
+
+.arcade-cabinet.arcade-theater-mode #glitch-game-canvas {
+  height: 100%;
+  max-height: calc(100vh - 160px);
+  width: auto;
+  max-width: 100%;
+  aspect-ratio: 720 / 320;
+  margin: 0 auto;
 }
 
 /* Mobile Game Controls */
@@ -1798,7 +1860,7 @@
 /* Emergency Rescue Actions Grid */
 .rescue-actions-container {
   width: 100%;
-  max-width: 740px;
+  max-width: 1080px;
   margin: 0 auto;
 }
 

@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="assets/css/base.css?v=3.3">
   <link rel="stylesheet" href="assets/css/components.css?v=3.3">
   <link rel="stylesheet" href="assets/css/animations.css?v=3.3">
-  <link rel="stylesheet" href="assets/css/pages.css?v=5.4">
+  <link rel="stylesheet" href="assets/css/pages.css?v=5.5">
 </head>
 <body>
 
@@ -190,12 +190,16 @@
                 <div class="arcade-scoreboard">
                   <div class="score-pill">SCORE: <span id="game-current-score">0 ROAS</span></div>
                   <div class="score-pill">HIGH: <span id="game-high-score">0 ROAS</span></div>
+                  <button type="button" class="arcade-expand-btn" id="game-expand-btn" title="Toggle Big Screen / Theater Mode" aria-label="Toggle Big Screen">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                    <span class="expand-label">THEATER</span>
+                  </button>
                 </div>
               </div>
 
               <!-- CRT Screen Bezel & Canvas -->
               <div class="arcade-screen-frame">
-                <canvas id="glitch-game-canvas" width="720" height="320"></canvas>
+                <canvas id="glitch-game-canvas" width="1440" height="640"></canvas>
                 <div class="crt-scanlines"></div>
               </div>
 
@@ -344,6 +348,6 @@
   <!-- Scripts -->
   <script src="assets/js/sound.js?v=3.4"></script>
   <script src="assets/js/main.js?v=6.2"></script>
-  <script src="assets/js/glitch-game.js?v=1.0"></script>
+  <script src="assets/js/glitch-game.js?v=1.1"></script>
 </body>
 </html>
