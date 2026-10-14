@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
@@ -7,9 +7,17 @@
   <!-- 1. Home -->
   <url>
     <loc>https://tavricon.in/</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
+  </url>
+
+  <!-- 1b. Performance Landing Page (High-ROAS Audit) -->
+  <url>
+    <loc>https://tavricon.in/landing.html</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
   </url>
 
   <!-- 2. Services -->
